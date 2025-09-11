@@ -24,4 +24,9 @@ public class Catedratico extends Usuario
             "reportar_incidentes",
         };
     }
+
+    public void agregarMateria(String materia)
+    {
+        materias.add(materia);
+    }
 }
