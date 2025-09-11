@@ -29,4 +29,9 @@ public class Catedratico extends Usuario
     {
         materias.add(materia);
     }
+
+    public ArrayList<String> getMaterias()
+    {
+        return new ArrayList<>(materias);
+    }
 }
