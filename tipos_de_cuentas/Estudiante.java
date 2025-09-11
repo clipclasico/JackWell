@@ -35,4 +35,9 @@ public class Estudiante extends Usuario
     {
         return new ArrayList<>(entradasDiario);
     }
+
+    public void personalizarMascota(String nuevoNombre)
+    {
+        mascota.setNombre(nuevoNombre);
+    }
 }
