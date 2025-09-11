@@ -32,4 +32,10 @@ public class Horario
     {
         return clases.removeIf(clase -> clase.getNombreMateria().equalsIgnoreCase(nombreMateria) && clase.getDia().equals(dia));
     }
+
+    public void eliminarTodasLasClases()
+    {
+        clases.clear();
+        System.out.println("Todas las clases han sido eliminadas del horario.");
+    }
 }
