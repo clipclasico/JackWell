@@ -22,4 +22,9 @@ public class Padre extends Usuario
             "configurar_contacto_emergencia",
         };
     }
+
+    public void configurarNotificaciones(boolean activar)
+    {
+        this.recibirNotificacionesEmergencia = activar;
+    }
 }
