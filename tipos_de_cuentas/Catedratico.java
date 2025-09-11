@@ -6,4 +6,11 @@ public class Catedratico extends Usuario
 {
     private ArrayList<String> materias;
     private boolean puedeRecibirAlertas;
+
+    public Catedratico(String id, String nombre, String correo, String contrasena, String telefono)
+    {
+        super(id, nombre, correo, contrasena, TipoCuenta.CATEDRATICO, telefono);
+        this.materias = new ArrayList<>();
+        this.puedeRecibirAlertas = true;
+    }
 }
