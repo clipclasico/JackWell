@@ -1,6 +1,7 @@
 package registrar_horarios;
 
 import java.time.DayOfWeek;
+import java.time.LocalTime;
 
 public class HorarioBuilder
 {
@@ -26,5 +27,10 @@ public class HorarioBuilder
         }
 
         return this;
+    }
+
+    public Horario build()
+    {
+        return horario;
     }
 }
