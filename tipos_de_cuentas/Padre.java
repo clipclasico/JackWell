@@ -5,9 +5,9 @@ public class Padre extends Usuario
     private String idEstudianteVinculado;
     private boolean recibirNotificacionesEmergencia;
 
-    public Padre(String id, String nombre, String correo, String contasena, String telefono, String idEstudianteVinculado)
+    public Padre(String id, String nombre, String correo, String contrasena, String telefono, String idEstudianteVinculado)
     {
-        super(id, nombre, correo, contasena, TipoCuenta.PADRE, telefono);
+        super(id, nombre, correo, contrasena, TipoCuenta.PADRE, telefono);
         this.idEstudianteVinculado = idEstudianteVinculado;
         this.recibirNotificacionesEmergencia = true;
     }
