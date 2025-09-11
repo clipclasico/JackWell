@@ -32,4 +32,9 @@ public class Padre extends Usuario
     {
         return idEstudianteVinculado;
     }
+
+    public boolean isRecibirNotificacionesEmergencia()
+    {
+        return recibirNotificacionesEmergencia;
+    }
 }
