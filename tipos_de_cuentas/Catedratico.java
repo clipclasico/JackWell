@@ -34,4 +34,9 @@ public class Catedratico extends Usuario
     {
         return new ArrayList<>(materias);
     }
+
+    public boolean isPuedeRecibirAlertas()
+    {
+        return puedeRecibirAlertas;
+    }
 }
