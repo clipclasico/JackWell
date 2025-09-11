@@ -127,5 +127,16 @@ public class Horario
         return reporte.toString();
     }
 
-    
+    public ArrayList<Clase> buscarPorMateria(String materia)
+    {
+        ArrayList<Clase> encontradas = new ArrayList<>();
+        for (Clase clase : clases)
+        {
+            if (clase.getNombreMateria().toLowerCase().contains(materia.toLowerCase()))
+            {
+                encontradas.add(clase);
+            }
+        }
+        return encontradas;
+    }
 }
