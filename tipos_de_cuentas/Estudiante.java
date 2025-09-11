@@ -30,4 +30,9 @@ public class Estudiante extends Usuario
         entradasDiario.add(entrada);
         racha.actualizarRacha();
     }
+
+    public ArrayList<EntradaDiario> obtenerHistorial()
+    {
+        return new ArrayList<>(entradasDiario);
+    }
 }
