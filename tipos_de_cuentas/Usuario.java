@@ -30,7 +30,7 @@ public abstract class Usuario
         this.telefono = telefono;
     }
 
-    public abstract String getPermisosEspeciales();
+    public abstract String[] getPermisosEspeciales();
 
     public String getId()
     {
