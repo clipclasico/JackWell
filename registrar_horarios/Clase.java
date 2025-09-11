@@ -89,4 +89,14 @@ public class Clase
     {
         return catedratico;
     }
+
+    public void setNombreMateria(String nombreMateria)
+    {
+        this.nombreMateria = nombreMateria;
+    }
+
+    public void setCatedratico(String catedratico)
+    {
+        this.catedratico = catedratico;
+    }
 }
