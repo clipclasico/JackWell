@@ -13,4 +13,15 @@ public class Catedratico extends Usuario
         this.materias = new ArrayList<>();
         this.puedeRecibirAlertas = true;
     }
+
+    @Override
+    public String[] getPermisosEspeciales()
+    {
+        return new String[]
+        {
+            "recibir_alertas_estudiantes",
+            "acceso_recursos_institucionales",
+            "reportar_incidentes",
+        };
+    }
 }
