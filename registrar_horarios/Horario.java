@@ -139,4 +139,21 @@ public class Horario
         }
         return encontradas;
     }
+
+    public boolean validarHorario()
+    {
+        for (int i = 0; i < clases.size(); i++)
+        {
+            for (int j = i + 1; j < clases.size(); j++)
+            {
+                if (clases.get(i).tieneConflicto(clases.get(j)))
+                {
+                    System.out.println("Conflicto detectado entre: " + clases.get(i).obtenerInformacion() + " y " + clases.get(j).obtenerInformacion());
+                    return false;
+                }
+            }
+        }
+        System.out.println("No se detectaron conflictos en el horario.");
+        return true;
+    }
 }
