@@ -54,4 +54,39 @@ public class Clase
     {
         return this.dia.equals(dia) && !hora.isBefore(horaInicio) && !hora.isAfter(horaFin);
     }
+
+    public String getNombreMateria()
+    {
+        return nombreMateria;
+    }
+
+    public DayOfWeek getDia()
+    {
+        return dia;
+    }
+
+    public LocalTime getHoraInicio()
+    {
+        return horaInicio;
+    }
+
+    public LocalTime getHoraFin()
+    {
+        return horaFin;
+    }
+
+    public String getEdificio()
+    {
+        return edificio;
+    }
+
+    public String getSalon()
+    {
+        return salon;
+    }
+
+    public String getCatedratico()
+    {
+        return catedratico;
+    }
 }
