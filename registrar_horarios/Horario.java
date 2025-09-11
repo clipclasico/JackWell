@@ -53,4 +53,28 @@ public class Horario
         clasesDia.sort((c1, c2) -> c1.getHoraInicio().compareTo(c2.getHoraInicio()));
         return clasesDia;
     }
+
+    public void mostrarHorarioCompleto()
+    {
+        if (clases.isEmpty())
+        {
+            System.out.println("El horario está vacío. Agregue clases para comenzar.");
+            return;
+        }
+
+        System.out.println("Horario Completo:");
+        for (DayOfWeek dia : DayOfWeek.values())
+        {
+            ArrayList<Clase> clasesDia = obtenerClasesPorDia(dia);
+            if (!clasesDia.isEmpty())
+            {
+                System.out.println("\n" dia.name() + ":");
+                for (Clase clase : clasesDia)
+                {
+                    System.out.println("  " + clase.obtenerInformacion());
+                }
+            }
+        }
+    }
+    
 }
