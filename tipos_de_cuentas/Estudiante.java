@@ -11,4 +11,17 @@ public class Estudiante extends Usuario
     private MascotaVirtual mascota;
     private Horario horario;
     private ArrayList<ContactoEmergencia> contactosEmergencia;
+
+    @Override
+    public String[] getPermisosEspeciales()
+    {
+        return new String[]
+        {
+            "crear_entrada_diario",
+            "usar_boton_emergencia",
+            "personalizar_mascota",
+            "registrar_horario",
+            "ver_ejercicios_bienestar",
+        };
+    }
 }
