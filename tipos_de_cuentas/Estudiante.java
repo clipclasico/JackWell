@@ -12,6 +12,17 @@ public class Estudiante extends Usuario
     private Horario horario;
     private ArrayList<ContactoEmergencia> contactosEmergencia;
 
+    public Estudiante(String id, String nombre, String correo, String contrasena, String telefono)
+    {
+        super(id, nombre, correo, contrasena, TipoCuenta.ESTUDIANTE, telefono);
+        this.entradasDiario = new ArrayList<>();
+        this.configuraciones = new Configuracion();
+        this.racha = new Racha();
+        this.mascota = new MascotaVirtual("Mascota");
+        this.horario = new Horario();
+        this.contactosEmergencia = new ArrayList<>();
+    }
+    
     @Override
     public String[] getPermisosEspeciales()
     {
