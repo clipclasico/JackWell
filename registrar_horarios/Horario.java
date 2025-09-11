@@ -1,8 +1,9 @@
 package registrar_horarios;
 
+import java.lang.reflect.Array;
 import java.time.DayOfWeek;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
+import java.time.LocalTime;
 
 public class Horario
 {
@@ -88,4 +89,19 @@ public class Horario
         }
         return null;
     }
+
+    public Clase obtenerProximaClase(DayOfWeek diaActual, LocalTime horaActual)
+    {
+        ArrayList<Clase> clasesHoy = obtenerClasesPorDia(diaActual);
+
+        for (Clase clase : clasesHoy)
+        {
+            if (clase.getHoraInicio().isAfter(horaActual))
+            {
+                return clase;
+            }
+        }
+        return null;
+    }
+
 }
