@@ -29,4 +29,31 @@ public abstract class Usuario
         this.nombre = nombre;
         this.telefono = telefono;
     }
+
+    public abstract String getPermisosEspeciales();
+
+    public String getId()
+    {
+        return id;
+    }
+
+    public String getNombre()
+    {
+        return nombre;
+    }
+
+    public String getCorreo()
+    {
+        return correo;
+    }
+
+    public TipoCuenta getTipoCuenta()
+    {
+        return tipoCuenta;
+    }
+
+        public String getTelefono()
+    {
+        return telefono;
+    }
 }
