@@ -39,4 +39,10 @@ public class Clase
         this.edificio = nuevoEdificio;
         this.salon = nuevoSalon;
     }
+
+    public boolean tieneConflicto(Clase otraClase)
+    {
+        if (!this.dia.equals(otraClase.dia))
+            return false;
+    }
 }
