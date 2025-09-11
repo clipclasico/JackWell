@@ -38,4 +38,19 @@ public class Horario
         clases.clear();
         System.out.println("Todas las clases han sido eliminadas del horario.");
     }
+
+    public ArrayList<Clase> obtenerClasesPorDia(DayOfWeek dia)
+    {
+        ArrayList<Clase> clasesDia = new ArrayList<>();
+        for (Clase clase : clases)
+        {
+            if (clase.getDia().equals(dia))
+            {
+                clasesDia.add(clase);
+            }
+        }
+
+        clasesDia.sort((c1, c2) -> c1.getHoraInicio().compareTo(c2.getHoraInicio()));
+        return clasesDia;
+    }
 }
