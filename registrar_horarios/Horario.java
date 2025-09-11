@@ -104,4 +104,28 @@ public class Horario
         return null;
     }
 
+    public String generarReporte()
+    {
+        StringBuilder reporte = new StringBuilder();
+        reporte.append("Reporte del Horario:\n");
+        reporte.append("======================\n");
+        reporte.append("Total de clases: ").append(clases.size()).append("\n");
+
+        for (DayOfWeek dia : DayOfWeek.values())
+        {
+            ArrayList<Clase> clasesDia = obtenerClasesPorDia(dia);
+            if (!clasesDia.isEmpty())
+            {
+                reporte.append(dia.name()).append(" ()").append(clasesDia.size()).append(" clases:\n");
+                for (Clase clase : clasesDia)
+                {
+                    reporte.append("  - ").append(clase.obtenerInformacion()).append("\n");
+                }
+                reporte.append("\n");
+            }
+        }
+        return reporte.toString();
+    }
+
+    
 }
