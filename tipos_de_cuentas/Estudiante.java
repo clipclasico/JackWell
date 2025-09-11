@@ -40,4 +40,9 @@ public class Estudiante extends Usuario
     {
         mascota.setNombre(nuevoNombre);
     }
+
+    public void agregarContactoEmergencia(ContactoEmergencia contacto)
+    {
+        contactosEmergencia.add(contacto);
+    }
 }
