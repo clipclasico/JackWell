@@ -2,7 +2,6 @@ package registrar_horarios;
 
 import java.time.LocalTime;
 import java.time.DayOfWeek;
-import java.util.*;
 
 public class Clase
 {
