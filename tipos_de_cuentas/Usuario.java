@@ -23,4 +23,10 @@ public abstract class Usuario
     {
         return this.correo.equals(correo) && this.contrasena.equals(contrasena);
     }
+
+    public void actualizarInformacion(String nombre, String telefono)
+    {
+        this.nombre = nombre;
+        this.telefono = telefono;
+    }
 }
