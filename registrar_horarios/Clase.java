@@ -24,4 +24,10 @@ public class Clase
         this.salon = salon;
         this.catedratico = catedratico;
     }
+
+    public String obtenerInformacion()
+    {
+        return String.format("%s - %s de %s a %s en %s %s (Catedrático: %s)",
+        nombreMateria, dia.name(), horaInicio.toString(), horaFin.toString(), edificio, salon, catedratico);
+    }
 }
