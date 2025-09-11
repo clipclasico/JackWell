@@ -11,4 +11,15 @@ public class Padre extends Usuario
         this.idEstudianteVinculado = idEstudianteVinculado;
         this.recibirNotificacionesEmergencia = true;
     }
+
+    @Override
+    public String[] getPermisosEspeciales()
+    {
+        return new String[]
+        {
+            "recibir_notificaciones_emergencia",
+            "ver_resumen_bienestar_estudiante",
+            "configurar_contacto_emergencia",
+        };
+    }
 }
