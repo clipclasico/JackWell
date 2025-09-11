@@ -43,6 +43,12 @@ public class Clase
     public boolean tieneConflicto(Clase otraClase)
     {
         if (!this.dia.equals(otraClase.dia))
-            return false;
+        {
+        return false;
+        }
+
+         return !(this.horaFin.isBefore(otraClase.horaInicio) || this.horaInicio.isAfter(otraClase.horaFin));
     }
+
+   
 }
