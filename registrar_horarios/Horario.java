@@ -156,4 +156,9 @@ public class Horario
         System.out.println("No se detectaron conflictos en el horario.");
         return true;
     }
+
+    public ArrayList<Clase> getClases()
+    {
+        return new ArrayList<>(clases);
+    }
 }
