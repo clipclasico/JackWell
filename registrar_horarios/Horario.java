@@ -76,5 +76,16 @@ public class Horario
             }
         }
     }
-    
+
+    public Clase obtenerClaseActual(DayOfWeek diaActual, LocalTime horaActual)
+    {
+        for (Clase clase : clases)
+        {
+            if (clase.estaActivaEn(diaActual, horaActual))
+            {
+                return clase;
+            }
+        }
+        return null;
+    }
 }
