@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Estudiante extends Usuario 
 {
-    private ArrayList<EntradasDiario> entradasDiario;
+    private ArrayList<EntradaDiario> entradasDiario;
     private Configuracion configuraciones;
     private Racha racha;
     private MascotaVirtual mascota;
@@ -22,7 +22,7 @@ public class Estudiante extends Usuario
         this.horario = new Horario();
         this.contactosEmergencia = new ArrayList<>();
     }
-    
+
     @Override
     public String[] getPermisosEspeciales()
     {
