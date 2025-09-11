@@ -1,5 +1,6 @@
 package registrar_horarios;
 
+import java.time.DayOfWeek;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -25,5 +26,10 @@ public class Horario
 
         clases.add(nuevaClase);
         return true;
+    }
+
+    public boolean eliminarClase(String nombreMateria, DayOfWeek dia)
+    {
+        return clases.removeIf(clase -> clase.getNombreMateria().equalsIgnoreCase(nombreMateria) && clase.getDia().equals(dia));
     }
 }
