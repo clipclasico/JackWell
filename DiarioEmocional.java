@@ -11,7 +11,7 @@ public class DiarioEmocional {
     public void agregarEntrada(String estadoAnimo, String pensamientos) {
         EntradaDiario nuevaEntrada = new EntradaDiario(estadoAnimo, pensamientos);
         this.entradas.add(nuevaEntrada);
-        System.out.println("Entrada guardada con éxito.");
+        System.out.println("Se guardó tu entrada.");
     }
 
     public void verEntradas() {
