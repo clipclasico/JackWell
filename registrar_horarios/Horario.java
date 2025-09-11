@@ -1,6 +1,5 @@
 package registrar_horarios;
 
-import java.lang.reflect.Array;
 import java.time.DayOfWeek;
 import java.util.*;
 import java.time.LocalTime;
