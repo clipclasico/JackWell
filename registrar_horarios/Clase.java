@@ -50,5 +50,8 @@ public class Clase
          return !(this.horaFin.isBefore(otraClase.horaInicio) || this.horaInicio.isAfter(otraClase.horaFin));
     }
 
-   
+    public boolean estaActivaEn(DayOfWeek dia, LocalTime hora)
+    {
+        return this.dia.equals(dia) && !hora.isBefore(horaInicio) && !hora.isAfter(horaFin);
+    }
 }
