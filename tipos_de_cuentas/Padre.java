@@ -27,4 +27,9 @@ public class Padre extends Usuario
     {
         this.recibirNotificacionesEmergencia = activar;
     }
+
+    public String getIdEstudianteVinculado()
+    {
+        return idEstudianteVinculado;
+    }
 }
