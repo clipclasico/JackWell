@@ -20,7 +20,7 @@ public class Horario
         {
             if (claseExistente.tieneConflicto(nuevaClase))
             {
-                System.out.println("Conflicto detectado con: " + claseExistente.obtenerInformacion())
+                System.out.println("Conflicto detectado con: " + claseExistente.obtenerInformacion());
                 return false;
             }
         }
@@ -69,7 +69,7 @@ public class Horario
             ArrayList<Clase> clasesDia = obtenerClasesPorDia(dia);
             if (!clasesDia.isEmpty())
             {
-                System.out.println("\n" dia.name() + ":");
+                System.out.println("\n" + dia.name() + ":");
                 for (Clase clase : clasesDia)
                 {
                     System.out.println("  " + clase.obtenerInformacion());
@@ -93,15 +93,19 @@ public class Horario
     public Clase obtenerProximaClase(DayOfWeek diaActual, LocalTime horaActual)
     {
         ArrayList<Clase> clasesHoy = obtenerClasesPorDia(diaActual);
+        Clase proximaClase = null;
 
         for (Clase clase : clasesHoy)
         {
             if (clase.getHoraInicio().isAfter(horaActual))
             {
-                return clase;
+                if (proximaClase == null || clase.getHoraInicio().isBefore(proximaClase.getHoraInicio()))
+                {
+                    proximaClase = clase;
+                }
             }
         }
-        return null;
+        return proximaClase;
     }
 
     public String generarReporte()
@@ -116,7 +120,7 @@ public class Horario
             ArrayList<Clase> clasesDia = obtenerClasesPorDia(dia);
             if (!clasesDia.isEmpty())
             {
-                reporte.append(dia.name()).append(" ()").append(clasesDia.size()).append(" clases:\n");
+                reporte.append(dia.name()).append(" (").append(clasesDia.size()).append(" clases:\n");
                 for (Clase clase : clasesDia)
                 {
                     reporte.append("  - ").append(clase.obtenerInformacion()).append("\n");
