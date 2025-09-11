@@ -24,4 +24,10 @@ public class Estudiante extends Usuario
             "ver_ejercicios_bienestar",
         };
     }
+
+    public void registrarEntrada(EntradaDiario entrada)
+    {
+        entradasDiario.add(entrada);
+        racha.actualizarRacha();
+    }
 }
