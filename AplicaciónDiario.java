@@ -12,6 +12,11 @@ public class AplicacionDiario {
             System.out.println("\n--- MENÚ PRINCIPAL ---");
             System.out.println("1. Registrar nueva entrada");
             System.out.println("2. Ver todas mis entradas");
+            System.out.println("3. Eliminar una entrada");
+            System.out.println("4. Salir");
+            System.out.print("Elige una opción: ");
+
+
 
 
 
