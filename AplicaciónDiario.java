@@ -30,6 +30,11 @@ public class AplicacionDiario {
                 case 2 -> {
                     miDiario.verEntradas();
                 }
+                case 3 -> {
+                    System.out.print("Ingresa el ID de la entrada que deseas eliminar: ");
+                    int idParaEliminar = scanner.nextInt();
+
+
 
 
 
