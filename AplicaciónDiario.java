@@ -22,6 +22,9 @@ public class AplicacionDiario {
                 case 1: {
                     System.out.print("¿Cómo te sientes hoy? (Ej: Feliz, Triste, Ansioso): ");
                     String animo = scanner.nextLine();
+                    System.out.println("Escribe tus pensamientos o lo que te pasó hoy:");
+
+
 
 
 
