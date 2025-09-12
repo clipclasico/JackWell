@@ -6,5 +6,7 @@ public class AplicacionDiario {
         DiarioEmocional miDiario = new DiarioEmocional();
         boolean salir = false;
 
+        System.out.println("Bienvenido a tu diario de emociones portatil ");
+
 
 
