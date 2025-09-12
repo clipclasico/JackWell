@@ -26,6 +26,12 @@ public class AplicacionDiario {
                     String pensamientos = scanner.nextLine();
                     miDiario.agregarEntrada(animo, pensamientos);
 
+                }
+                case 2 -> {
+                    miDiario.verEntradas();
+                }
+
+
 
 
 
