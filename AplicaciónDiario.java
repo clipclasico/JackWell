@@ -10,6 +10,10 @@ public class AplicacionDiario {
 
         while (!salir) {
             System.out.println("\n--- MENÚ PRINCIPAL ---");
+            System.out.println("1. Registrar nueva entrada");
+            System.out.println("2. Ver todas mis entradas");
+
+
 
 
 
