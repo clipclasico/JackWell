@@ -42,6 +42,9 @@ public class AplicacionDiario {
                     salir = true; 
                 }
                 default -> {
+                    System.out.println("Opción no válida. Por favor, intenta de nuevo.");
+                    
+
 
 
 
