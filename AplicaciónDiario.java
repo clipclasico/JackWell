@@ -43,7 +43,15 @@ public class AplicacionDiario {
                 }
                 default -> {
                     System.out.println("Opción no válida. Por favor, intenta de nuevo.");
+                }
+            }
+        }
+        scanner.close();
+    }
+}
+
                     
+
 
 
 
