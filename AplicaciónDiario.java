@@ -20,6 +20,9 @@ public class AplicacionDiario {
             scanner.nextLine();
             switch (opcion) {
                 case 1: {
+                    System.out.print("¿Cómo te sientes hoy? (Ej: Feliz, Triste, Ansioso): ");
+
+
 
 
 
