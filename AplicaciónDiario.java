@@ -35,6 +35,10 @@ public class AplicacionDiario {
                     int idParaEliminar = scanner.nextInt();
                     if (miDiario.eliminarEntrada(idParaEliminar)) {
                         System.out.println("🗑️ Entrada #" + idParaEliminar + " eliminada.");
+                    }
+                }
+                case 4 -> {
+
 
 
 
