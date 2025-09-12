@@ -22,7 +22,7 @@ public class AplicacionDiario {
                 case 1: {
                     System.out.print("¿Cómo te sientes hoy? (Ej: Feliz, Triste, Ansioso): ");
                     String animo = scanner.nextLine();
-                    System.out.println("Escribe tus pensamientos o lo que te pasó hoy:");
+                    System.out.println("Escribe tus pensamientos o que te pasó hoy:");
                     String pensamientos = scanner.nextLine();
                     miDiario.agregarEntrada(animo, pensamientos);
 
@@ -31,13 +31,16 @@ public class AplicacionDiario {
                     miDiario.verEntradas();
                 }
                 case 3 -> {
-                    System.out.print("Ingresa el ID de la entrada que deseas eliminar: ");
+                    System.out.print("Ingresa el ID de la entrada que quieres eliminar: ");
                     int idParaEliminar = scanner.nextInt();
                     if (miDiario.eliminarEntrada(idParaEliminar)) {
-                        System.out.println("🗑️ Entrada #" + idParaEliminar + " eliminada.");
+                        System.out.println("🗑Entrada #" + idParaEliminar + " eliminada.");
                     }
                 }
                 case 4 -> {
+                    System.out.println("Gracias por usar tu diario, no platicamos luego");
+
+
 
 
 
