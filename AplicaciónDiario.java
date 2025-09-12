@@ -24,19 +24,7 @@ public class AplicacionDiario {
                     String animo = scanner.nextLine();
                     System.out.println("Escribe tus pensamientos o lo que te pasó hoy:");
                     String pensamientos = scanner.nextLine();
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    miDiario.agregarEntrada(animo, pensamientos);
 
 
 
