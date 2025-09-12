@@ -8,5 +8,8 @@ public class AplicacionDiario {
 
         System.out.println("Bienvenido a tu diario de emociones portatil ");
 
+        while (!salir) {
+            System.out.println("\n--- MENÚ PRINCIPAL ---");
+
 
 
