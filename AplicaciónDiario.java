@@ -39,6 +39,8 @@ public class AplicacionDiario {
                 }
                 case 4 -> {
                     System.out.println("Gracias por usar tu diario, no platicamos luego");
+                    salir = true; 
+
 
 
 
