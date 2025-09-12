@@ -17,7 +17,11 @@ public class AplicacionDiario {
             System.out.print("Elige una opción: ");
 
         int opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer del scanner
+            scanner.nextLine();
+            switch (opcion) {
+                case 1: {
+
+
 
 
 
