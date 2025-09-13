@@ -1,4 +1,4 @@
-public class AlertaEmergencia {
+    public class AlertaEmergencia {
         private String tipoCuentaDestino;
     private String mensaje;
 
