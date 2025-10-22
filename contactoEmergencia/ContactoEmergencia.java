@@ -49,4 +49,14 @@ public class ContactoEmergencia
 
         System.out.println("Contacto de emergencia actualizado: " + nombre);
     }
+
+    public void notificarEmergencia(String mensaje)
+    {
+        if(activo)
+        {
+            System.out.println("Notificando a " + nombre + " (" + relacion + ") al teléfono " + telefono + " y email " + email + ": " + mensaje);
+        } else {
+            System.out.println("El contacto de emergencia " + nombre + " está inactivo. No se puede notificar.");
+        }
+    }
 }
