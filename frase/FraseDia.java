@@ -63,4 +63,22 @@ public class FraseDia
         int indice = random.nextInt(frases.size());
         return frases.get(indice);
     }
+
+    public void mostrarFraseDelDia()
+    {
+        String frase = obtenerFraseDelDia();
+        System.out.println("Frase del día: ");
+        System.out.println(frase);
+    }
+
+    public void listarFrases()
+    {
+        System.out.println("Listado de frases:");
+        for (int i = 0; i < frases.size(); i++)
+        {
+            System.out.println((i + 1) + ". " + frases.get(i));
+        }
+        System.out.println("Total de frases: " + frases.size());
+
+    }
 }
