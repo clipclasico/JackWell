@@ -59,4 +59,54 @@ public class ContactoEmergencia
             System.out.println("El contacto de emergencia " + nombre + " está inactivo. No se puede notificar.");
         }
     }
+
+    public String getNombre()
+    {
+        return nombre;
+    }
+
+    public String getTelefono()
+    {
+        return telefono;
+    }
+
+    public String getRelacion()
+    {
+        return relacion;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public boolean isActivo()
+    {
+        return activo;
+    }
+
+    public void setNombre(String nombre)
+    {
+        this.nombre = nombre;
+    }
+
+    public void setTelefono(String telefono)
+    {
+        this.telefono = telefono;
+    }
+
+    public void setRelacion(String relacion)
+    {
+        this.relacion = relacion;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
+    public void setActivo(boolean activo)
+    {
+        this.activo = activo;
+    }
 }
