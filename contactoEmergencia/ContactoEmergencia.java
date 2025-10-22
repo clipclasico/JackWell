@@ -26,4 +26,14 @@ public class ContactoEmergencia
         this.activo = false;
         System.out.println("Contacto de emergencia desactivado: " + nombre);
     }
+
+    public String obtenerInformacion()
+    {
+        String estado = activo ? "Activo" : "Inactivo";
+        return "Nombre: " + nombre + "\n" +
+               "Teléfono: " + telefono + "\n" +
+               "Relación: " + relacion + "\n" +
+               "Email: " + email + "\n" +
+               "Estado: " + estado;
+    }
 }
