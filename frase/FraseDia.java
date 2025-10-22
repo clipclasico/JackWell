@@ -8,4 +8,12 @@ public class FraseDia
     private List<String> frases;
     private LocalDate fechaActual;
     private Random random;
+
+    public FraseDia()
+    {
+        this.frases = new ArrayList<>();
+        this.random = new Random();
+        this.fechaActual = LocalDate.now();
+        inicializarFrases();
+    }
 }
