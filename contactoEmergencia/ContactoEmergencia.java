@@ -18,7 +18,7 @@ public class ContactoEmergencia
     public void activar()
     {
         this.activo = true;
-        System.out.println("Contacto de emergencia activado: " + nombre)
+        System.out.println("Contacto de emergencia activado: " + nombre);
     }
 
     public void desactivar()
