@@ -46,7 +46,7 @@ public class FraseDia
         frases.add("Eres más fuerte de lo que piensas.");
         frases.add("Ríe. Llora. Respira. Repite.");
         frases.add("Los días dificiles hacen que los buenos días sean aún mejores.");
-        frases.add("Eres más fuerte de lo que piensas.");
+        frases.add("Buenos días.");
         frases.add("Tus errores no te definen. Aprende de ellos y sigue adelante.");
         frases.add("Cada pequeño paso cuenta en tu camino hacia el bienestar.");
     }
@@ -81,4 +81,14 @@ public class FraseDia
         System.out.println("Total de frases: " + frases.size());
 
     }
+
+    public List<String> getFrases()
+    {
+        return new ArrayList<>(frases);
+    }
+
+    public int getCantidadFrases()
+    {
+        return frases.size();
+    }    
 }
