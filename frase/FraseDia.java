@@ -50,4 +50,17 @@ public class FraseDia
         frases.add("Tus errores no te definen. Aprende de ellos y sigue adelante.");
         frases.add("Cada pequeño paso cuenta en tu camino hacia el bienestar.");
     }
+
+    public String obtenerFraseDelDia()
+    {
+        int dia = fechaActual.getDayOfYear();
+        int indice = dia % frases.size();
+        return frases.get(indice);
+    }
+
+    public String obtenerFraseAleatoria()
+    {
+        int indice = random.nextInt(frases.size());
+        return frases.get(indice);
+    }
 }
