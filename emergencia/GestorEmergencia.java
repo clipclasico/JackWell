@@ -21,3 +21,4 @@ public class GestorEmergencia {
 
         return new AlertaEmergencia(tipoCuenta, mensaje);
     }
+}
