@@ -1,7 +1,9 @@
 package tipos_de_cuentas;
 
 import java.util.ArrayList;
-
+import registrar_horarios.Horario;
+import contactoEmergencia.ContactoEmergencia;
+import Registryentradas.EntradaDiario;
 
 public class Estudiante extends Usuario 
 {
@@ -55,5 +57,15 @@ public class Estudiante extends Usuario
     public void agregarContactoEmergencia(ContactoEmergencia contacto)
     {
         contactosEmergencia.add(contacto);
+    }
+
+    public Horario getHorario()
+    {
+        return horario;
+    }
+
+    public ArrayList<ContactoEmergencia> getContactosEmergencia()
+    {
+        return contactosEmergencia;
     }
 }
