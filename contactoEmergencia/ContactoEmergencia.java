@@ -14,4 +14,16 @@ public class ContactoEmergencia
         this.email = email;
         this.activo = true;
     }
+
+    public void activar()
+    {
+        this.activo = true;
+        System.out.println("Contacto de emergencia activado: " + nombre)
+    }
+
+    public void desactivar()
+    {
+        this.activo = false;
+        System.out.println("Contacto de emergencia desactivado: " + nombre);
+    }
 }
