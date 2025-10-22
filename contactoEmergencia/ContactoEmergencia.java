@@ -36,4 +36,17 @@ public class ContactoEmergencia
                "Email: " + email + "\n" +
                "Estado: " + estado;
     }
+
+    public void actualizarContacto(String telefono, String email)
+    {
+        if (telefono != null && !telefono.isEmpty()) {
+            this.telefono = telefono;
+        }
+
+        if (email != null && !email.isEmpty()) {
+            this.email = email;
+        }
+
+        System.out.println("Contacto de emergencia actualizado: " + nombre);
+    }
 }
