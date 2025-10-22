@@ -1,10 +1,10 @@
 public class FormularioDenuncias
 {
     private static final String URL_FORMULARIO = "https://denuncias.etictel.com/?company=22295";
-    private static final String EMAIL_TRANSPARENCIA = "transparencia.get@etictel.com";
+    private static final String EMAIL_TRANSPARENCIA = "transparencia.gev@etictel.com";
     private static final String TELEFONO_TRANSPARENCIA = "2378-1966";
 
-    public static void mostrarInformación()
+    public static void mostrarInformacion()
     {
         System.out.println("\nFormulario de Denuncias anónimas:");
         System.out.println("--------------------------------");
@@ -23,6 +23,6 @@ public class FormularioDenuncias
         System.out.println("- Conductas inapropiadas de cualquier tipo.");
 
         System.out.println("Tu voz es importante para nosotros. Ayúdanos a mantener un ambiente seguro y respetuoso en nuestra comunidad universitaria.");
+        System.out.println();
     }
-
 }
