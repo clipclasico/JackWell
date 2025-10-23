@@ -68,4 +68,19 @@ public class Estudiante extends Usuario
     {
         return contactosEmergencia;
     }
+
+    public Configuracion getConfiguraciones()
+    {
+        return configuraciones;
+    }
+
+    public Racha getRacha()
+    {
+        return racha;
+    }
+
+    public MascotaVirtual getMascota()
+    {
+        return mascota;
+    }
 }
