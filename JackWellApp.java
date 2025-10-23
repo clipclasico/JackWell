@@ -31,7 +31,7 @@ public class JackWellApp
 
         while(continuar)
         {
-            if (!sistem.haySesionActiva())
+            if (!sistema.haySesionActiva())
             {
                 continuar = menuPrincipal();
             }
@@ -43,6 +43,8 @@ public class JackWellApp
 
         scanner.close();
         System.out.println("Gracias por usar JackWell. ¡Hasta luego!");
+    }
+
 
     private static void mostrarBienvenida()
     {
