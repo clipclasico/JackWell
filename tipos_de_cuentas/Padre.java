@@ -19,9 +19,9 @@ public class Padre extends Usuario
     {
         return new String[]
         {
-            "recibir_notificaciones_emergencia",
-            "ver_resumen_bienestar_estudiante",
-            "configurar_contacto_emergencia",
+            "Recibir notificaciones de emergencia",
+            "Ver resumen de bienestar del estudiante",
+            "configurar contacto de emergencia",
         };
     }
 
@@ -42,7 +42,7 @@ public class Padre extends Usuario
 
     public Estudiante getEstudianteVinculado()
     {
-        return null;
+        return estudianteVinculado;
     }
 
     public boolean isPuedeRecibirNotificaciones()

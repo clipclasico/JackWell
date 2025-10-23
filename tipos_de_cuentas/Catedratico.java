@@ -19,9 +19,9 @@ public class Catedratico extends Usuario
     {
         return new String[]
         {
-            "recibir_alertas_estudiantes",
-            "acceso_recursos_institucionales",
-            "reportar_incidentes",
+            "Recibir alertas de estudiantes",
+            "Acceso arecursos institucionales",
+            "Reportar incidentes",
         };
     }
 

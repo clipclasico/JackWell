@@ -356,7 +356,7 @@ public class JackWellApp
 
     private static void gestionarDiarioEmocional(Estudiante estudiante)
     {
-        DiarioEmocional diario = new DiarioEmocional();
+        DiarioEmocional diario = estudiante.getDiario();
         System.out.println("\n--- Diario Emocional ---");
         System.out.println("1. Registrar nueva entrada");
         System.out.println("2. Ver todas mis entradas");
@@ -999,7 +999,6 @@ public class JackWellApp
                 System.out.println("Opción inválida. Intente de nuevo.");
                 configurarAlertas(catedratico);
         }
-        presionarEnter();
     }
 
 // ========================== FUNCIONALIDADES PADRE ==========================
@@ -1074,7 +1073,6 @@ public class JackWellApp
                 System.out.println("Opción inválida. Intente de nuevo.");
                 configurarNotificacionesPadre(padre);
         }
-        presionarEnter();
     }
 
 // ========================== UTILIDADES ==========================
