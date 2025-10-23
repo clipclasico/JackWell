@@ -134,7 +134,7 @@ public class JackWellApp
         Usuario usuario = sistema.getUsuarioActual();
         System.out.println("\nMenú de Usuario - " + usuario.getNombre());
 
-        if (usuario instanceOf Estudiante)
+        if (usuario instanceof Estudiante)
         {
             return menuEstudiante();
         }
