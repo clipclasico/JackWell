@@ -59,6 +59,6 @@ public abstract class Usuario
 
     public void setContrasena(String contrasena)
     {
-        this.contrasena = contrasena
+        this.contrasena = contrasena;
     }
 }

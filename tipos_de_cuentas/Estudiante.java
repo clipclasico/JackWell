@@ -3,7 +3,7 @@ package tipos_de_cuentas;
 import java.util.ArrayList;
 import registrar_horarios.Horario;
 import contactoEmergencia.ContactoEmergencia;
-import Registryentradas.EntradaDiario;
+import RegistrarEntradas.EntradaDiario;
 
 public class Estudiante extends Usuario 
 {
