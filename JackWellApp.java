@@ -417,7 +417,7 @@ public class JackWellApp
         System.out.println("Ejercicios de relajación");
         System.out.println("1. Ejercicio por estado emocional");
         System.out.println("2. Ejercicio según mi horario");
-        System.out.println("3. Respiración profunda (rápida)")
+        System.out.println("3. Respiración profunda (rápida)");
         System.out.println("0. Volver al menú principal");
 
         System.out.print("Seleccione una opción: ");
@@ -953,7 +953,7 @@ public class JackWellApp
         }
     }
 
-    privatic static void configurarAlertas(Catedratico catedratico)
+    private static void configurarAlertas(Catedratico catedratico)
     {
         System.out.println("\n--- Configurar Alertas ---");
         System.out.println("Estado actual: " + (catedratico.isPuedeRecibirAlertas() ? "Activado" : "Desactivado"));
