@@ -1,3 +1,4 @@
+package emergencia;
 
 import tipos_de_cuentas.Estudiante;
 
@@ -21,3 +22,4 @@ public class GestorEmergencia {
 
         return new AlertaEmergencia(tipoCuenta, mensaje);
     }
+}

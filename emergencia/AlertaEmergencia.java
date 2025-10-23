@@ -1,3 +1,5 @@
+package emergencia;
+
 public class AlertaEmergencia {
         private String tipoCuentaDestino;
     private String mensaje;
