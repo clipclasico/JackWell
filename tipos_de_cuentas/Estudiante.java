@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import registrar_horarios.Horario;
 import contactoEmergencia.ContactoEmergencia;
 import RegistrarEntradas.EntradaDiario;
+import extras.Configuracion;
+import extras.Racha;
+import extras.MascotaVirtual;
 
 public class Estudiante extends Usuario 
 {
