@@ -708,7 +708,7 @@ public class JackWellApp
             case 3:
                 if (estudiante.getContactosEmergencia().isEmpty())
                 {
-                    System.out.println("No tienes contactos de emergencia para activar/desactivar.");
+                    System.out.println("No tienes contactos de emergencia para actualizar.");
                     presionarEnter();
                     gestionarContactosEmergencia(estudiante);
                     break;
@@ -719,7 +719,7 @@ public class JackWellApp
                 {
                     System.out.println((i + 1) + ". " + estudiante.getContactosEmergencia().get(i).getNombre());
                 }
-                System.out.print("Seleccione el número del contacto a activar/desactivar: ");
+                System.out.print("Seleccione el número del contacto a actualizar: ");
                 int indice = leerEntero() - 1;
                 scanner.nextLine();
 
@@ -1012,7 +1012,7 @@ public class JackWellApp
         if (estudiante == null)
         {
             System.out.println("No se ha vinculado ningún estudiante a esta cuenta.");
-            System.oyt.println("ID del estudiante a vincular: " + padre.getIdEstudianteVinculado());
+            System.out.println("ID del estudiante a vincular: " + padre.getIdEstudianteVinculado());
             presionarEnter();
             return;
         }

@@ -45,31 +45,6 @@ public class SistemaLogin
         }
     }
 
-    public boolean registrarUsuario(TipoCuenta tipo, String id, String nombre, String correo, String contrasena, String telefono, String datosAdicionales)
-    {
-        for (Usuario usuario : usuarios)
-        {
-            if (usuario.getCorreo().equals(correo))
-            {
-                System.out.println("Error: Ya existe un usuario con este correo.");
-                return false;
-            }
-        }
-
-        try 
-        {
-            Usuario nuevoUsuario = UsuarioFactory.crearUsuario(tipo, id, nombre, correo, contrasena, telefono, datosAdicionales);
-            usuarios.add(nuevoUsuario);
-            System.out.println("Usuario registrado exitosamente: " + nombre);
-            return true;
-        } 
-        catch (Exception e)
-        {
-            System.out.println("Error al registrar usuario: " + e.getMessage());
-            return false;
-        }
-    }
-
     public boolean haySesionActiva()
     {
         return usuarioActual != null;
