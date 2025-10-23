@@ -14,9 +14,10 @@ public class Racha
         return diasConsecutivos;
     }
 
-    public void incrementarRacha()
+    public void actualizarRacha()
     {
         diasConsecutivos++;
+        System.out.println("¡Racha actualizada! Días consecutivos: " + diasConsecutivos);
     }
 
     public void reiniciarRacha()
