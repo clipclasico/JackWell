@@ -22,7 +22,7 @@ public class SistemaLogin
                 this.usuarioActual = usuario;
                 System.out.println("Inicio de sesión exitoso.");
                 System.out.println("Bienvenido, " + usuario.getNombre());
-                System.out.println("Tipo de cuenta: " + usuario.getTipoCuenta.getDescripcion());
+                System.out.println("Tipo de cuenta: " + usuario.getTipoCuenta().getDescripcion());
                 return true;
             }
         }
@@ -141,7 +141,7 @@ public class SistemaLogin
         System.out.println("Teléfono: " + usuarioActual.getTelefono());
         System.out.println("Tipo de cuenta: " + usuarioActual.getTipoCuenta().getDescripcion());
         System.out.println("Permisos especiales: ");
-        for (String permiso _ usuarioActual.getPermisosEspeciales())
+        for (String permiso : usuarioActual.getPermisosEspeciales())
         {
             System.out.println("- " + permiso);
         }
