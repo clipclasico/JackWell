@@ -998,6 +998,16 @@ public class JackWellApp
     private static void verEstudianteVinculado(Padre padre)
     {
         System.out.println("\n--- Estudiante Vinculado ---");
+
+        Estudiante estudiante = padre.getEstudianteVinculado();
+        if (estudiante == null)
+        {
+            System.out.println("No se ha vinculado ningún estudiante a esta cuenta.");
+            System.oyt.println("ID del estudiante a vincular: " + padre.getIdEstudianteVinculado());
+            presionarEnter();
+            return;
+        }
+
         System.out.println("Nombre: " + padre.getEstudianteVinculado().getNombre());
 
         System.out.println("Información disponible");

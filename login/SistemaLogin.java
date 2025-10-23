@@ -160,4 +160,57 @@ public class SistemaLogin
         }
         System.out.println("Total de usuarios: " + usuarios.size());
     }
+
+    public boolean registrarUsuario(TipoCuenta tipo, String id, String nombre, String correo, String contrasena, String telefono, String datosAdicionales)
+    {
+        for (Usuario usuario : usuarios)
+        {
+            if (usuario.getCorreo().equals(correo))
+            {
+                System.out.println("Error: Ya existe un usuario con este correo");
+                return false;
+            }
+        }
+
+        try
+        {
+            Usuario nuevoUsuario = UsuarioFactory.crearUsuario(tipo, id, nombre, correo, contrasena, telefono, datosAdicionales);
+            usuarios.add(nuevoUsuario);
+
+            if (nuevoUsuario instanceof Padre && datosAdicionales != null)
+            {
+                Padre padre = (Padre) nuevoUsuario;
+                Estudiante estudiante = buscarEstudiantePorId(datosAdicionales);
+                if (estudiante != null)
+                {
+                    padre.setEstudianteVinculado(estudiante);
+                    System.out.println("Estudiante vinculado exitosamente: " + estudiante.getNombre());
+                }
+                else
+                {
+                    System.out.println("Advertencia: No se encontró un estudiante con el ID proporcionado.");
+                }
+            }
+
+            System.out.println("Usuario registrado exitosamente: " + nombre);
+            return true;
+        }
+        catch (Exception e)
+        {
+            System.out.println("Error al registrar usuario: " + e.getMessage());
+            return false;
+        }
+    }
+    
+    private Estudiante buscarEstudiantePorId(String id)
+    {
+        for (Usuario usuario : usuarios)
+        {
+            if (usuario instanceof Estudiante && usuario.getId().equals(id))
+            {
+                return (Estudiante) usuario;
+            }
+        }
+        return null;
+    }
 }
