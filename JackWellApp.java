@@ -27,20 +27,22 @@ public class JackWellApp
 
         mostrarBienvenida();
 
-        do
+        boolean continuar = true;
+
+        while(continuar)
         {
-            if (!sistema.haySesionActiva())
+            if (!sistem.haySesionActiva())
             {
-                if (!menuPrincipal()) break;
-            } else {
+                continuar = menuPrincipal();
+            }
+            else
+            {
                 menuUsuario();
             }
         }
-        while (sistema.haySesionActiva());
 
         scanner.close();
-        System.out.println("Gracias por usar JackWell. ¡Hasta luego!");
-    }
+        System.out.println("Gracias por usar JackWell. ¡Hasta luego!")
 
     private static void mostrarBienvenida()
     {
@@ -67,26 +69,31 @@ public class JackWellApp
         {
             case 1:
                 iniciarSesion();
-                return true;
+                break;
             case 2:
                 registrarUsuario();
-                return true;
+                break;
             case 3:
                 fraseDia.mostrarFraseDelDia();
-                return true;
+                presionarEnter();
+                break;
             case 4:
                 FormularioDenuncias.mostrarInformacion();
-                return true;
+                presionarEnter();
+                break;
             case 5:
                 sistema.listarUsuarios();
-                return true;
+                presionarEnter();
+                break;
             case 0:
                 return false;
 
             default:
                 System.out.println("Opción inválida. Intente de nuevo.");
-                return true;
+                break;
         }
+
+        return true;
     }
 
     private static void iniciarSesion()
