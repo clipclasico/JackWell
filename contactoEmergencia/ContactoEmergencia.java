@@ -56,7 +56,9 @@ public class ContactoEmergencia
     {
         if(activo)
         {
-            System.out.println("Notificando a " + nombre + " (" + relacion + ") al teléfono " + telefono + " y email " + email + ": " + mensaje);
+            System.out.println("Notificación enviada a " + nombre + " (" + email + ")");
+            System.out.println("Llamada automática al " + telefono);
+            System.out.println("Mensaje: " + mensaje);
         } else {
             System.out.println("El contacto de emergencia " + nombre + " está inactivo. No se puede notificar.");
         }
