@@ -39,4 +39,9 @@ public class Catedratico extends Usuario
     {
         return puedeRecibirAlertas;
     }
+
+    public void setPuedeRecibirAlertas(boolean puedeRecibirAlertas)
+    {
+        this.puedeRecibirAlertas = puedeRecibirAlertas;
+    }
 }

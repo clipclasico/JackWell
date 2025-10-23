@@ -4,7 +4,7 @@ import frase.FraseDia;
 import formulario.FormularioDenuncias;
 import contactoEmergencia.ContactoEmergencia;
 import RegistrarEntradas.*;
-import registar_horarios.*;
+import registrar_horarios.*;
 import registrar_horarios.Clase;
 import relajacion.*;
 import emergencia.*;
@@ -27,20 +27,24 @@ public class JackWellApp
 
         mostrarBienvenida();
 
-        do
+        boolean continuar = true;
+
+        while(continuar)
         {
             if (!sistema.haySesionActiva())
             {
-                if (!menuPrincipal()) break;
-            } else {
+                continuar = menuPrincipal();
+            }
+            else
+            {
                 menuUsuario();
             }
         }
-        while (sistema.haySesionActiva());
 
         scanner.close();
         System.out.println("Gracias por usar JackWell. ¡Hasta luego!");
     }
+
 
     private static void mostrarBienvenida()
     {
@@ -67,26 +71,31 @@ public class JackWellApp
         {
             case 1:
                 iniciarSesion();
-                return true;
+                break;
             case 2:
                 registrarUsuario();
-                return true;
+                break;
             case 3:
                 fraseDia.mostrarFraseDelDia();
-                return true;
+                presionarEnter();
+                break;
             case 4:
-                FormularioDenuncias.mostrarFormulario();
-                return true;
+                FormularioDenuncias.mostrarInformacion();
+                presionarEnter();
+                break;
             case 5:
                 sistema.listarUsuarios();
-                return true;
+                presionarEnter();
+                break;
             case 0:
                 return false;
 
             default:
                 System.out.println("Opción inválida. Intente de nuevo.");
-                return true;
+                break;
         }
+
+        return true;
     }
 
     private static void iniciarSesion()
@@ -244,7 +253,7 @@ public class JackWellApp
                 presionarEnter();
                 break;
             case 10:
-                FormularioDenuncias.mostrarFormulario();
+                FormularioDenuncias.mostrarInformacion();
                 presionarEnter();
                 break;
             case 0:
@@ -280,7 +289,7 @@ public class JackWellApp
                 configurarAlertas(catedratico);
                 break;
             case 3:
-                FormularioDenuncias.mostrarFormulario();
+                FormularioDenuncias.mostrarInformacion();
                 presionarEnter();
                 break;
             case 4:
@@ -324,7 +333,7 @@ public class JackWellApp
                 configurarNotificacionesPadre(padre);
                 break;
             case 3:
-                FormularioDenuncias.mostrarFormulario();
+                FormularioDenuncias.mostrarInformacion();
                 presionarEnter();
                 break;
             case 4:
@@ -431,7 +440,7 @@ public class JackWellApp
                 System.out.print("¿Cómo te sientes ahora? ");
                 String emocion = scanner.nextLine();
                 EjercicioRespiracion ejercicio1 = GestorRelajacion.sugerirEjercicioPorEmocion(emocion);
-                System.out.println("Ejercicio sugerido: " + ejercicioEmocion.obtenerDescripcion());
+                System.out.println("Ejercicio sugerido: " + ejercicio1.obtenerDescripcion());
 
                 System.out.println("¿Deseas iniciar el ejercicio ahora? (s/n)");
                 if (scanner.nextLine().equalsIgnoreCase("s"))
@@ -472,7 +481,7 @@ public class JackWellApp
                 break;
             
             case 3:
-                EjercicioRespiracion ejercicio3 = newEjercicioRespiracion(
+                EjercicioRespiracion ejercicio3 = new EjercicioRespiracion(
                     "Respiración rápida", 3, "Inhala profundamente por 3 segundos, exhala rápidamente. Repite."
                 );
                 System.out.println(ejercicio3.obtenerDescripcion());
@@ -572,7 +581,7 @@ public class JackWellApp
 
                 DayOfWeek hoy = DayOfWeek.from(java.time.LocalDate.now());
                 System.out.println("\n Clases de hoy (" + hoy + "):");
-                for (Clase clase : horario.getClasesPorDia(hoy))
+                for (Clase clase : horario.obtenerClasesPorDia(hoy))
                 {
                     System.out.println(clase.obtenerInformacion());
                 }
@@ -609,7 +618,7 @@ public class JackWellApp
             case 5:
                 System.out.print("Ingrese el nombre de la materia a buscar: ");
                 String busqueda = scanner.nextLine();
-                var encontradas = horario.buscarClasePorMateria(busqueda);
+                var encontradas = horario.buscarPorMateria(busqueda);
 
                 if (encontradas.isEmpty())
                 {
@@ -998,6 +1007,16 @@ public class JackWellApp
     private static void verEstudianteVinculado(Padre padre)
     {
         System.out.println("\n--- Estudiante Vinculado ---");
+
+        Estudiante estudiante = padre.getEstudianteVinculado();
+        if (estudiante == null)
+        {
+            System.out.println("No se ha vinculado ningún estudiante a esta cuenta.");
+            System.oyt.println("ID del estudiante a vincular: " + padre.getIdEstudianteVinculado());
+            presionarEnter();
+            return;
+        }
+
         System.out.println("Nombre: " + padre.getEstudianteVinculado().getNombre());
 
         System.out.println("Información disponible");

@@ -27,4 +27,9 @@ public class FormularioDenuncias
         System.out.println("Tu voz es importante para nosotros. Ayúdanos a mantener un ambiente seguro y respetuoso en nuestra comunidad universitaria.");
         System.out.println();
     }
+
+    public static void mostrarFormulario()
+    {
+        mostrarInformacion();
+    }
 }
