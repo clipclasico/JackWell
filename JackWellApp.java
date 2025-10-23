@@ -24,7 +24,7 @@ public class JackWellApp
                 menuUsuario();
             }
         }
-        while (sistema.SesionActiva() || true);
+        while (sistema.haySesionActiva());
 
         scanner.close();
         System.out.println("Gracias por usar JackWell. ¡Hasta luego!");
