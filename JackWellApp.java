@@ -4,7 +4,7 @@ import frase.FraseDia;
 import formulario.FormularioDenuncias;
 import contactoEmergencia.ContactoEmergencia;
 import RegistrarEntradas.*;
-import registar_horarios.*;
+import registrar_horarios.*;
 import registrar_horarios.Clase;
 import relajacion.*;
 import emergencia.*;
@@ -431,7 +431,7 @@ public class JackWellApp
                 System.out.print("¿Cómo te sientes ahora? ");
                 String emocion = scanner.nextLine();
                 EjercicioRespiracion ejercicio1 = GestorRelajacion.sugerirEjercicioPorEmocion(emocion);
-                System.out.println("Ejercicio sugerido: " + ejercicioEmocion.obtenerDescripcion());
+                System.out.println("Ejercicio sugerido: " + ejercicio1.obtenerDescripcion());
 
                 System.out.println("¿Deseas iniciar el ejercicio ahora? (s/n)");
                 if (scanner.nextLine().equalsIgnoreCase("s"))
@@ -472,7 +472,7 @@ public class JackWellApp
                 break;
             
             case 3:
-                EjercicioRespiracion ejercicio3 = newEjercicioRespiracion(
+                EjercicioRespiracion ejercicio3 = new EjercicioRespiracion(
                     "Respiración rápida", 3, "Inhala profundamente por 3 segundos, exhala rápidamente. Repite."
                 );
                 System.out.println(ejercicio3.obtenerDescripcion());
