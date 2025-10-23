@@ -1,3 +1,5 @@
+package relajacion;
+
 public class SesionRelajacion {
     private EjercicioRespiracion ejercicio;
     private boolean activa;

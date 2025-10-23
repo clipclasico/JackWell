@@ -1,0 +1,35 @@
+package formulario;
+
+public class FormularioDenuncias
+{
+    private static final String URL_FORMULARIO = "https://denuncias.etictel.com/?company=22295";
+    private static final String EMAIL_TRANSPARENCIA = "transparencia.gev@etictel.com";
+    private static final String TELEFONO_TRANSPARENCIA = "2378-1966";
+
+    public static void mostrarInformacion()
+    {
+        System.out.println("\nFormulario de Denuncias anónimas:");
+        System.out.println("--------------------------------");
+        System.out.println("La Universidad del Valle de Guatemala pone a disposición de sus estudiantes el siguiente formulario para reportar cualquier conducta inapropiada o irregularidades dentro de la institución. Este formulario es completamente anónimo y está diseñado para proteger la identidad del denunciante.");
+        System.out.println("Formulario: " + URL_FORMULARIO);
+
+        System.out.println("También puedes contactar al departamento de transparencia mediante:");
+        System.out.println("Email: " + EMAIL_TRANSPARENCIA);
+        System.out.println("Teléfono: " + TELEFONO_TRANSPARENCIA);
+
+        System.out.println("\nTipos de denuncias:");
+        System.out.println("- Acoso");
+        System.out.println("- Discriminación");
+        System.out.println("- Violencia física o psicológica");
+        System.out.println("- Situaciones que afecten la integridad y seguridad de la comunidad universitaria");
+        System.out.println("- Conductas inapropiadas de cualquier tipo.");
+
+        System.out.println("Tu voz es importante para nosotros. Ayúdanos a mantener un ambiente seguro y respetuoso en nuestra comunidad universitaria.");
+        System.out.println();
+    }
+
+    public static void mostrarFormulario()
+    {
+        mostrarInformacion();
+    }
+}

@@ -56,4 +56,9 @@ public abstract class Usuario
     {
         return telefono;
     }
+
+    public void setContrasena(String contrasena)
+    {
+        this.contrasena = contrasena;
+    }
 }

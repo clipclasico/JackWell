@@ -1,3 +1,5 @@
+package relajacion;
+
 public class EjercicioRespiracion {
     private String nombre;
     private int duracionMinutos;
