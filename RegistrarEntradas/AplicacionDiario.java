@@ -21,31 +21,36 @@ public class AplicacionDiario {
         int opcion = scanner.nextInt();
             scanner.nextLine();
             switch (opcion) {
-                case 1: {
+                case 1:
                     System.out.print("¿Cómo te sientes hoy? (Ej: Feliz, Triste, Ansioso): ");
                     String animo = scanner.nextLine();
                     System.out.println("Escribe tus pensamientos o que te pasó hoy:");
                     String pensamientos = scanner.nextLine();
                     miDiario.agregarEntrada(animo, pensamientos);
+                    break;
 
-                }
-                case 2 -> {
+                
+                case 2:
                     miDiario.verEntradas();
-                }
-                case 3 -> {
+                    break;
+                
+                case 3:
                     System.out.print("Ingresa el ID de la entrada que quieres eliminar: ");
                     int idParaEliminar = scanner.nextInt();
                     if (miDiario.eliminarEntrada(idParaEliminar)) {
                         System.out.println("🗑Entrada #" + idParaEliminar + " eliminada.");
                     }
-                }
-                case 4 -> {
+                    break;
+                
+                case 4:
                     System.out.println("Gracias por usar tu diario, no platicamos luego");
                     salir = true; 
-                }
-                default -> {
+                    break;
+                
+                default:
                     System.out.println("Opción no válida. Por favor, intenta de nuevo.");
-                }
+                    break;
+                
             }
         }
         scanner.close();
