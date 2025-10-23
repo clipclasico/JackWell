@@ -1,3 +1,5 @@
+package relajacion;
+
 import registrar_horarios.Horario;
 import registrar_horarios.Clase;
 import tipos_de_cuentas.Estudiante;
