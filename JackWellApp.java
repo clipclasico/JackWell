@@ -42,7 +42,7 @@ public class JackWellApp
         }
 
         scanner.close();
-        System.out.println("Gracias por usar JackWell. ¡Hasta luego!")
+        System.out.println("Gracias por usar JackWell. ¡Hasta luego!");
 
     private static void mostrarBienvenida()
     {
