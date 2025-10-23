@@ -1012,7 +1012,7 @@ public class JackWellApp
         if (estudiante == null)
         {
             System.out.println("No se ha vinculado ningún estudiante a esta cuenta.");
-            System.oyt.println("ID del estudiante a vincular: " + padre.getIdEstudianteVinculado());
+            System.out.println("ID del estudiante a vincular: " + padre.getIdEstudianteVinculado());
             presionarEnter();
             return;
         }

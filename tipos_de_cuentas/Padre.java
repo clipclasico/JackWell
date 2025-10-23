@@ -54,9 +54,4 @@ public class Padre extends Usuario
     {
         this.estudianteVinculado = estudiante;
     }
-
-    public Estudiante getEstudianteVinculado()
-    {
-        return estudianteVinculado;
-    }
 }
