@@ -1,3 +1,5 @@
+package contactoEmergencia;
+
 public class ContactoEmergencia
 {
     private String nombre;

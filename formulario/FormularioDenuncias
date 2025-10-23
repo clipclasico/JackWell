@@ -1,3 +1,5 @@
+package formulario;
+
 public class FormularioDenuncias
 {
     private static final String URL_FORMULARIO = "https://denuncias.etictel.com/?company=22295";

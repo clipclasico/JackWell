@@ -1,3 +1,4 @@
+package emergencia;
 
 import tipos_de_cuentas.Estudiante;
 

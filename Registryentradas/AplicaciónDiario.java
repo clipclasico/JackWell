@@ -1,3 +1,5 @@
+package Registryentradas;
+
 import java.util.Scanner;
 
 public class AplicacionDiario {
