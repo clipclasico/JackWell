@@ -1,10 +1,11 @@
+package emergencia;
 
 import tipos_de_cuentas.Estudiante;
 
 public class GestorEmergencia {
 
     public static AlertaEmergencia generarAlertaPorEstado(Estudiante estudiante, String estadoEmocional) {
-        String tipoCuenta = estudiante.getTipoCuenta().toString();
+        String tipoCuenta = "Contacto de emergencia";
         String mensaje;
 
         switch (estadoEmocional.toLowerCase()) {
@@ -21,3 +22,4 @@ public class GestorEmergencia {
 
         return new AlertaEmergencia(tipoCuenta, mensaje);
     }
+}

@@ -1,7 +1,12 @@
 package tipos_de_cuentas;
 
 import java.util.ArrayList;
-
+import registrar_horarios.Horario;
+import contactoEmergencia.ContactoEmergencia;
+import RegistrarEntradas.EntradaDiario;
+import extras.Configuracion;
+import extras.Racha;
+import extras.MascotaVirtual;
 
 public class Estudiante extends Usuario 
 {
@@ -11,6 +16,7 @@ public class Estudiante extends Usuario
     private MascotaVirtual mascota;
     private Horario horario;
     private ArrayList<ContactoEmergencia> contactosEmergencia;
+    private DiarioEmocional diario;
 
     public Estudiante(String id, String nombre, String correo, String contrasena, String telefono)
     {
@@ -21,6 +27,7 @@ public class Estudiante extends Usuario
         this.mascota = new MascotaVirtual("Mascota");
         this.horario = new Horario();
         this.contactosEmergencia = new ArrayList<>();
+        this.diario = new DiarioEmocional();
     }
 
     @Override
@@ -28,11 +35,11 @@ public class Estudiante extends Usuario
     {
         return new String[]
         {
-            "crear_entrada_diario",
-            "usar_boton_emergencia",
-            "personalizar_mascota",
-            "registrar_horario",
-            "ver_ejercicios_bienestar",
+            "Crear entrada en diario",
+            "Usar botón de emergencia",
+            "Personalizar mascota",
+            "Registrar horario",
+            "Ver ejercicios de bienestar",
         };
     }
 
@@ -55,5 +62,35 @@ public class Estudiante extends Usuario
     public void agregarContactoEmergencia(ContactoEmergencia contacto)
     {
         contactosEmergencia.add(contacto);
+    }
+
+    public Horario getHorario()
+    {
+        return horario;
+    }
+
+    public ArrayList<ContactoEmergencia> getContactosEmergencia()
+    {
+        return contactosEmergencia;
+    }
+
+    public Configuracion getConfiguraciones()
+    {
+        return configuraciones;
+    }
+
+    public Racha getRacha()
+    {
+        return racha;
+    }
+
+    public MascotaVirtual getMascota()
+    {
+        return mascota;
+    }
+
+    public DiarioEmocional getDiario()
+    {
+        return diario;
     }
 }
