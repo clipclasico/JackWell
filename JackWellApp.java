@@ -75,7 +75,7 @@ public class JackWellApp
                 fraseDia.mostrarFraseDelDia();
                 return true;
             case 4:
-                FormularioDenuncias.mostrarFormulario();
+                FormularioDenuncias.mostrarInformacion();
                 return true;
             case 5:
                 sistema.listarUsuarios();
@@ -244,7 +244,7 @@ public class JackWellApp
                 presionarEnter();
                 break;
             case 10:
-                FormularioDenuncias.mostrarFormulario();
+                FormularioDenuncias.mostrarInformacion();
                 presionarEnter();
                 break;
             case 0:
@@ -280,7 +280,7 @@ public class JackWellApp
                 configurarAlertas(catedratico);
                 break;
             case 3:
-                FormularioDenuncias.mostrarFormulario();
+                FormularioDenuncias.mostrarInformacion();
                 presionarEnter();
                 break;
             case 4:
@@ -324,7 +324,7 @@ public class JackWellApp
                 configurarNotificacionesPadre(padre);
                 break;
             case 3:
-                FormularioDenuncias.mostrarFormulario();
+                FormularioDenuncias.mostrarInformacion();
                 presionarEnter();
                 break;
             case 4:
@@ -572,7 +572,7 @@ public class JackWellApp
 
                 DayOfWeek hoy = DayOfWeek.from(java.time.LocalDate.now());
                 System.out.println("\n Clases de hoy (" + hoy + "):");
-                for (Clase clase : horario.getClasesPorDia(hoy))
+                for (Clase clase : horario.obtenerClasesPorDia(hoy))
                 {
                     System.out.println(clase.obtenerInformacion());
                 }
@@ -609,7 +609,7 @@ public class JackWellApp
             case 5:
                 System.out.print("Ingrese el nombre de la materia a buscar: ");
                 String busqueda = scanner.nextLine();
-                var encontradas = horario.buscarClasePorMateria(busqueda);
+                var encontradas = horario.buscarPorMateria(busqueda);
 
                 if (encontradas.isEmpty())
                 {

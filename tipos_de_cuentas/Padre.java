@@ -37,4 +37,14 @@ public class Padre extends Usuario
     {
         return recibirNotificacionesEmergencia;
     }
+
+    public Estudiante getEstudianteVinculado()
+    {
+        return null;
+    }
+
+    public boolean isPuedeRecibirNotificaciones()
+    {
+        return recibirNotificacionesEmergencia;
+    }
 }

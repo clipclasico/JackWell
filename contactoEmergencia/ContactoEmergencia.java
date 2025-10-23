@@ -84,7 +84,7 @@ public class ContactoEmergencia
         return email;
     }
 
-    public boolean isActivo()
+    public boolean estaActivo()
     {
         return activo;
     }
