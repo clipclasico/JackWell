@@ -13,3 +13,9 @@ public static final String RUTA_ARCHIVO = "diario.dat";
           oos.writeObject(datos);
         }
     }
+
+    public static Object cargarDatos() throws IOException, ClassNotFoundException {
+        File archivo = new File(RUTA_ARCHIVO);
+        if (!archivo.exists()) {
+            return null;
+        }
