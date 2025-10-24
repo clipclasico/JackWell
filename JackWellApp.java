@@ -27,17 +27,17 @@ public class JackWellApp
 
         mostrarBienvenida();
 
-        boolean continuar = true;
+        int opcion = -1;
 
-        while(continuar)
+        while(opcion != 0)
         {
             if (!sistema.haySesionActiva())
             {
-                continuar = menuPrincipal();
+                opcion = menuPrincipal();
             }
             else
             {
-                menuUsuario();
+                opcion = menuUsuario();
             }
         }
 
@@ -53,7 +53,7 @@ public class JackWellApp
         System.out.println("===================================");
     }
 
-    private static boolean menuPrincipal()
+    private static int menuPrincipal()
     {
         System.out.println("\nMenú Principal");
         System.out.println("1. Iniciar Sesión");
@@ -88,14 +88,14 @@ public class JackWellApp
                 presionarEnter();
                 break;
             case 0:
-                return false;
+                return 0;
 
             default:
                 System.out.println("Opción inválida. Intente de nuevo.");
                 break;
         }
 
-        return true;
+        return -1;
     }
 
     private static void iniciarSesion()
@@ -181,7 +181,7 @@ public class JackWellApp
         }
     }
 
-    private static boolean menuUsuario()
+    private static int menuUsuario()
     {
         Usuario usuario = sistema.getUsuarioActual();
         System.out.println("\nMenú de Usuario - " + usuario.getNombre());
@@ -199,10 +199,10 @@ public class JackWellApp
             return menuPadre((Padre) usuario);
         }
 
-        return true;
+        return -1;
     }
 
-    private static boolean menuEstudiante(Estudiante estudiante)
+    private static int menuEstudiante(Estudiante estudiante)
     {
         System.out.println("1. Mi diario emocional");
         System.out.println("2. Ejercicios de relajación");
@@ -263,10 +263,10 @@ public class JackWellApp
             default:
                 System.out.println("Opción inválida. Intente de nuevo.");
         }
-        return true;
+        return -1;
     }   
 
-    private static boolean menuCatedratico(Catedratico catedratico)
+    private static int menuCatedratico(Catedratico catedratico)
     {
         System.out.println("1. Mis materias");
         System.out.println("2. Configurar alertas");
@@ -307,10 +307,10 @@ public class JackWellApp
             default:
                 System.out.println("Opción inválida. Intente de nuevo.");
         }
-        return true;
+        return -1;
     }
 
-    private static boolean menuPadre(Padre padre)
+    private static int menuPadre(Padre padre)
     {
         System.out.println("1. Ver estudiante vinculado");
         System.out.println("2. Configurar notificaciones");
@@ -351,7 +351,7 @@ public class JackWellApp
             default:
                 System.out.println("Opción inválida. Intente de nuevo.");
         }
-        return true;
+        return -1;
     }
 
     private static void gestionarDiarioEmocional(Estudiante estudiante)

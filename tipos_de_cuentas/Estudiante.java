@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import registrar_horarios.Horario;
 import contactoEmergencia.ContactoEmergencia;
 import RegistrarEntradas.EntradaDiario;
+import RegistrarEntradas.DiarioEmocional;
 import extras.Configuracion;
 import extras.Racha;
 import extras.MascotaVirtual;
