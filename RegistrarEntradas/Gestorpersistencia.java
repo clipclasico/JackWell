@@ -19,3 +19,11 @@ public static final String RUTA_ARCHIVO = "diario.dat";
         if (!archivo.exists()) {
             return null;
         }
+        try (FileInputStream fis = new FileInputStream(RUTA_ARCHIVO);
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+            
+            Object datos = ois.readObject();
+            return datos;
+        }
+    }
+}
