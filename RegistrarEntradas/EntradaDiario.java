@@ -1,17 +1,20 @@
 package RegistrarEntradas;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class EntradaDiario {
-    private static int contadorId = 0;
+public class EntradaDiario implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+
     private int id;
     private LocalDateTime fecha;
     private String estadoAnimo;
     private String pensamientos;
 
-    public EntradaDiario(String estadoAnimo, String pensamientos) {
-        this.id = ++contadorId;
+    public EntradaDiario(int id, String estadoAnimo, String pensamientos) {
+        this.id = id;
         this.fecha = LocalDateTime.now();
         this.estadoAnimo = estadoAnimo;
         this.pensamientos = pensamientos;
