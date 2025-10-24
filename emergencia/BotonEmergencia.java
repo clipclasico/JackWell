@@ -1,3 +1,5 @@
+package emergencia;
+
 public class BotonEmergencia {
         private boolean activado;
 

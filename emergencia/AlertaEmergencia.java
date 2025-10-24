@@ -1,4 +1,10 @@
+<<<<<<< HEAD
     public class AlertaEmergencia {
+=======
+package emergencia;
+
+public class AlertaEmergencia {
+>>>>>>> 82073b4d4ae74ab1fe356869b42d5deea6c33743
         private String tipoCuentaDestino;
     private String mensaje;
 
