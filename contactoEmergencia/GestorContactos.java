@@ -11,3 +11,15 @@ public class GestorContactos implements Serializable {
     
 public GestorContactos() {
         this.contactos = new ArrayList<>();
+    }
+
+    public void agregarContacto(ContactoEmergencia contacto) {
+        this.contactos.add(contacto);
+        System.out.println("Contacto agregado: " + contacto.getNombre());
+    }
+
+    public void listarContactos() {
+        if (contactos.isEmpty()) {
+            System.out.println("No hay contactos de emergencia registrados.");
+            return;
+        }
