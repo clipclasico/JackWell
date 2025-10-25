@@ -1,5 +1,6 @@
 import tipos_de_cuentas.*;
 import login.SistemaLogin;
+import login.GestorPersistencia; 
 import frase.FraseDia;
 import formulario.FormularioDenuncias;
 import contactoEmergencia.ContactoEmergencia;
@@ -9,6 +10,7 @@ import registrar_horarios.Clase;
 import relajacion.*;
 import emergencia.*;
 
+import java.io.IOException; 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.util.Scanner;
@@ -21,7 +23,24 @@ public class JackWellApp
 
     public static void main(String[] args)
     {
-        sistema = new SistemaLogin();
+        // --- 3. MODIFICACIÓN DE CARGA ---
+        // Se elimina: sistema = new SistemaLogin();
+        // En su lugar, cargamos los datos:
+        
+        try {
+            sistema = (SistemaLogin) GestorPersistencia.cargarDatos();
+            System.out.println("[Sistema] Datos de login cargados exitosamente.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("[Sistema] No se encontró archivo. Creando nuevo sistema de login.");
+            // e.printStackTrace(); // Descomentar para depurar errores de carga
+        }
+
+        if (sistema == null) {
+            sistema = new SistemaLogin();
+        }
+        // --- FIN DE MODIFICACIÓN DE CARGA ---
+
+
         scanner = new Scanner(System.in);
         fraseDia = new FraseDia();
 
@@ -37,9 +56,21 @@ public class JackWellApp
             }
             else
             {
-                menuUsuario();
+                menuUsuario(); // (El nombre 'menuUsuario' estaba incorrecto, debe ser 'menuUsuario')
             }
         }
+        
+        // --- 4. MODIFICACIÓN DE GUARDADO ---
+        // Justo antes de salir, guardamos el estado del sistema
+        try {
+            GestorPersistencia.guardarDatos(sistema);
+            System.out.println("[Sistema] Todos los datos han sido guardados.");
+        } catch (IOException e) {
+            System.err.println("[Sistema] ¡ERROR FATAL! No se pudieron guardar los datos.");
+            e.printStackTrace();
+        }
+        // --- FIN DE MODIFICACIÓN DE GUARDADO ---
+
 
         scanner.close();
         System.out.println("Gracias por usar JackWell. ¡Hasta luego!");
@@ -49,7 +80,7 @@ public class JackWellApp
     private static void mostrarBienvenida()
     {
         System.out.println("===================================");
-        System.out.println("   Bienvenido a JackWell App");
+        System.out.println("    Bienvenido a JackWell App");
         System.out.println("===================================");
     }
 
