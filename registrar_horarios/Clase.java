@@ -2,9 +2,12 @@ package registrar_horarios;
 
 import java.time.LocalTime;
 import java.time.DayOfWeek;
+import java.io.Serializable;
 
-public class Clase
+public class Clase implements Serializable
 {
+    private static final long serialVersionUID = 1L;
+    
     private String nombreMateria;
     private DayOfWeek dia;
     private LocalTime horaInicio;
@@ -46,7 +49,7 @@ public class Clase
         return false;
         }
 
-         return !(this.horaFin.isBefore(otraClase.horaInicio) || this.horaInicio.isAfter(otraClase.horaFin));
+        return !(this.horaFin.isBefore(otraClase.horaInicio) || this.horaInicio.isAfter(otraClase.horaFin));
     }
 
     public boolean estaActivaEn(DayOfWeek dia, LocalTime hora)
