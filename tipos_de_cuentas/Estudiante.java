@@ -5,14 +5,12 @@ import registrar_horarios.Horario;
 import contactoEmergencia.ContactoEmergencia;
 import RegistrarEntradas.EntradaDiario;
 import RegistrarEntradas.DiarioEmocional;
-import extras.Configuracion;
 import extras.Racha;
 import extras.MascotaVirtual;
 
 public class Estudiante extends Usuario 
 {
     private ArrayList<EntradaDiario> entradasDiario;
-    private Configuracion configuraciones;
     private Racha racha;
     private MascotaVirtual mascota;
     private Horario horario;
@@ -23,7 +21,6 @@ public class Estudiante extends Usuario
     {
         super(id, nombre, correo, contrasena, TipoCuenta.ESTUDIANTE, telefono);
         this.entradasDiario = new ArrayList<>();
-        this.configuraciones = new Configuracion();
         this.racha = new Racha();
         this.mascota = new MascotaVirtual("Mascota");
         this.horario = new Horario();
@@ -73,11 +70,6 @@ public class Estudiante extends Usuario
     public ArrayList<ContactoEmergencia> getContactosEmergencia()
     {
         return contactosEmergencia;
-    }
-
-    public Configuracion getConfiguraciones()
-    {
-        return configuraciones;
     }
 
     public Racha getRacha()
