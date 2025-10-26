@@ -50,6 +50,7 @@ public class JackWellApp
     {
         System.out.println("===================================");
         System.out.println("   Bienvenido a JackWell App");
+        System.out.println("   ¡Bienestar que trasciende!");
         System.out.println("===================================");
     }
 
@@ -128,7 +129,7 @@ public class JackWellApp
         System.out.println("1. Estudiante");
         System.out.println("2. Padre");
         System.out.println("3. Catedrático");
-        System.out.print("Seleccione una opción:");
+        System.out.print("Seleccione una opción: ");
         int tipoNum = leerEntero();
         scanner.nextLine();
 
@@ -184,7 +185,9 @@ public class JackWellApp
     private static int menuUsuario()
     {
         Usuario usuario = sistema.getUsuarioActual();
-        System.out.println("\nMenú de Usuario - " + usuario.getNombre());
+        System.out.println("===============================");
+        System.out.println("Menú de Usuario - " + usuario.getNombre());
+        System.out.println("===============================\n");
 
         if (usuario instanceof Estudiante)
         {
