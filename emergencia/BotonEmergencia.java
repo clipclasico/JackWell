@@ -1,7 +1,11 @@
 package emergencia;
 
-public class BotonEmergencia {
-        private boolean activado;
+import java.io.Serializable;
+
+public class BotonEmergencia implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+    private boolean activado;
 
     public BotonEmergencia() {
         this.activado = false;
@@ -22,5 +26,4 @@ public class BotonEmergencia {
     public String obtenerEstado() {
         return activado ? "🆘 Botón activado" : "🔒 Botón desactivado";
     }
-
 }

@@ -1,18 +1,25 @@
 package RegistrarEntradas;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DiarioEmocional {
+public class DiarioEmocional implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+
     private List<EntradaDiario> entradas;
+    private int proximoId = 1;
 
     public DiarioEmocional() {
         this.entradas = new ArrayList<>();
+        this.proximoId = 1;
     }
 
     public void agregarEntrada(String estadoAnimo, String pensamientos) {
-        EntradaDiario nuevaEntrada = new EntradaDiario(estadoAnimo, pensamientos);
+        EntradaDiario nuevaEntrada = new EntradaDiario(this.proximoId, estadoAnimo, pensamientos);
         this.entradas.add(nuevaEntrada);
+        this.proximoId++;
         System.out.println("Se guardó tu entrada.");
     }
 
@@ -28,6 +35,11 @@ public class DiarioEmocional {
         System.out.println("======================================================");
     }
     
+    public boolean eliminarEntrada(int id) {
+        boolean eliminada = this.entradas.removeIf(entrada -> entrada.getId() == id);
+        return eliminada;
+    }
+}
     public boolean eliminarEntrada(int id) {
         boolean eliminada = this.entradas.removeIf(entrada -> entrada.getId() == id);
         return eliminada;

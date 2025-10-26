@@ -1,13 +1,16 @@
 package login;
 
 import tipos_de_cuentas.*;
+import java.io.Serializable; 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SistemaLogin
+public class SistemaLogin implements Serializable 
 {
+    private static final long serialVersionUID = 1L; 
+    
     private List<Usuario> usuarios;
-    private Usuario usuarioActual;
+    private transient Usuario usuarioActual; 
 
     public SistemaLogin()
     {
@@ -128,6 +131,10 @@ public class SistemaLogin
 
     public void listarUsuarios()
     {
+        if (usuarios.isEmpty()) {
+            System.out.println("No hay usuarios registrados.");
+            return;
+        }
         System.out.println("Listado de usuarios registrados:");
         for (Usuario usuario : usuarios)
         {
