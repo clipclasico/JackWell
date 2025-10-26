@@ -5,9 +5,10 @@ import formulario.FormularioDenuncias;
 import contactoEmergencia.ContactoEmergencia;
 import RegistrarEntradas.*;
 import registrar_horarios.*;
-import registrar_horarios.Clase;
 import relajacion.*;
 import emergencia.*;
+import extras.MascotaVirtual;
+import extras.Racha;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
@@ -381,11 +382,14 @@ public class JackWellApp
 
                 diario.agregarEntrada(animo, pensamientos);
                 estudiante.getRacha().actualizarRacha();
+                estudiante.getMascota().actualizacionDiaria();
                 EjercicioRespiracion ejercicio = GestorRelajacion.sugerirEjercicioPorEmocion(animo);
                 if (ejercicio != null)
                 {
                     System.out.println("Se ha sugerido un ejercicio de relajación para ti: " + ejercicio.obtenerDescripcion());
                 }
+
+                System.out.println(estudiante.getRacha().obtenerProgresoProximaRecompensa())
                 presionarEnter();
                 gestionarDiarioEmocional(estudiante);
                 break;
@@ -845,72 +849,162 @@ public class JackWellApp
     }
 
     private static void gestionarMascota(Estudiante estudiante)
+{
+    MascotaVirtual mascota = estudiante.getMascota();
+    
+    System.out.println(mascota.obtenerEstadoCompleto());
+    System.out.println(mascota.obtenerEmojiEstado() + " Estado actual de " + mascota.getNombre());
+    
+    System.out.println("\n1. Interactuar con " + mascota.getNombre());
+    System.out.println("2. Alimentar");
+    System.out.println("3. Jugar");
+    System.out.println("4. Descansar");
+    System.out.println("5. Entrenar");
+    System.out.println("6. Agregar accesorio");
+    System.out.println("7. Cambiar nombre");
+    System.out.println("0. Volver");
+    System.out.print("Seleccione una opción: ");
+    
+    int opcion = leerEntero();
+    scanner.nextLine();
+    
+    switch (opcion)
     {
-        System.out.println("\n--- Mi Mascota Virtual ---");
-        System.out.println("Nombre de la mascota: " + estudiante.getMascota().getNombre());
-
-        System.out.println("\n1. Interactuar con mi mascota");
-        System.out.println("2. Cambiar nombre");
-        System.out.println("0. Volver al menú principal");
-
-        System.out.print("Seleccione una opción: ");
-
-        int opcion = leerEntero();
-        scanner.nextLine();
-
-        switch (opcion)
-        {
-            case 1:
-                estudiante.getMascota().interactuar();
-                System.out.println("¡Tu mascota está feliz!");
-                presionarEnter();
-                gestionarMascota(estudiante);
-                break;
-
-            case 2:
-                System.out.print("\nIngrese el nuevo nombre de la mascota: ");
-                String nuevoNombre = scanner.nextLine();
-                estudiante.getMascota().setNombre(nuevoNombre);
-                System.out.println("Nombre de la mascota actualizado.");
-                presionarEnter();
-                gestionarMascota(estudiante);
-                break;
-
-            case 0:
-                System.out.println("Volviendo al menú principal...");
-                break;
-
-            default:
-                System.out.println("Opción inválida. Intente de nuevo.");
-                gestionarMascota(estudiante);
-        }
+        case 1:
+            mascota.interactuar();
+            presionarEnter();
+            gestionarMascota(estudiante);
+            break;
+            
+        case 2:
+            mascota.alimentar();
+            presionarEnter();
+            gestionarMascota(estudiante);
+            break;
+            
+        case 3:
+            mascota.jugar();
+            presionarEnter();
+            gestionarMascota(estudiante);
+            break;
+            
+        case 4:
+            mascota.descansar();
+            presionarEnter();
+            gestionarMascota(estudiante);
+            break;
+            
+        case 5:
+            mascota.entrenar();
+            presionarEnter();
+            gestionarMascota(estudiante);
+            break;
+            
+        case 6:
+            System.out.println("\n🎁 ACCESORIOS DISPONIBLES:");
+            System.out.println("1. Collar Dorado");
+            System.out.println("2. Gorra Cool");
+            System.out.println("3. Bufanda de Invierno");
+            System.out.println("4. Gafas de Sol");
+            System.out.println("5. Capa de Superhéroe");
+            System.out.println("6. Corona Real");
+            System.out.print("Seleccione un accesorio: ");
+            
+            int acc = leerEntero();
+            scanner.nextLine();
+            
+            String accesorio = "";
+            switch (acc)
+            {
+                case 1: accesorio = "Collar Dorado"; break;
+                case 2: accesorio = "Gorra Cool"; break;
+                case 3: accesorio = "Bufanda de Invierno"; break;
+                case 4: accesorio = "Gafas de Sol"; break;
+                case 5: accesorio = "Capa de Superhéroe"; break;
+                case 6: accesorio = "Corona Real"; break;
+                default:
+                    System.out.println("Accesorio inválido.");
+                    presionarEnter();
+                    gestionarMascota(estudiante);
+                    return;
+            }
+            
+            mascota.agregarAccesorio(accesorio);
+            presionarEnter();
+            gestionarMascota(estudiante);
+            break;
+            
+        case 7:
+            System.out.print("\nNuevo nombre para tu mascota: ");
+            String nuevoNombre = scanner.nextLine();
+            mascota.setNombre(nuevoNombre);
+            System.out.println("¡Nombre actualizado a " + nuevoNombre + "!");
+            presionarEnter();
+            gestionarMascota(estudiante);
+            break;
+            
+        case 0:
+            break;
+            
+        default:
+            System.out.println("Opción inválida.");
+            gestionarMascota(estudiante);
     }
+}
 
     private static void mostrarRacha(Estudiante estudiante)
+{
+    Racha racha = estudiante.getRacha();
+    
+    racha.mostrarEstadisticas();
+    
+    System.out.println("\n" + racha.obtenerProgresoProximaRecompensa());
+    System.out.println(racha.obtenerEmojiRacha() + " ¡Sigue así!");
+    
+    System.out.println("\n1. Ver todas las recompensas");
+    System.out.println("2. Ver recompensas obtenidas");
+    System.out.println("0. Volver");
+    System.out.print("Seleccione una opción: ");
+    
+    int opcion = leerEntero();
+    scanner.nextLine();
+    
+    switch (opcion)
     {
-        System.out.println("\n--- Mi Racha ---");
-        System.out.println("Días consecutivos con entradas en el diario: " + estudiante.getRacha().getDiasConsecutivos());
-
-        int dias = estudiante.getRacha().getDiasConsecutivos();
-        if (dias == 0)
-        {
-            System.out.println("¡Comienza tu racha hoy registrando una entrada en tu diario!");
-        }
-        else if (dias < 7)
-        {
-            System.out.println("¡Sigue así! Estás en camino a una racha de una semana.");
-        }
-        else if (dias < 30)
-        {
-            System.out.println("¡Increíble, sigue así!");
-        }
-        else
-        {
-            System.out.println("¡Asombroso! Has alcanzado una racha de más de un mes. ¡Eres un campeón del bienestar emocional!");
-        }
-
-        presionarEnter();
+        case 1:
+            racha.mostrarRecompensas();
+            presionarEnter();
+            mostrarRacha(estudiante);
+            break;
+            
+        case 2:
+            System.out.println("RECOMPENSAS OBTENIDAS");
+            
+            if (racha.getRecompensasObtenidas().isEmpty())
+            {
+                System.out.println("Aún no has obtenido recompensas");
+                System.out.println("¡Sigue usando tu diario!");
+            }
+            else
+            {
+                for (Racha.Recompensa r : racha.getRecompensasObtenidas())
+                {
+                    System.out.println(r.getIcono() + " " + r.getNombre());
+                }
+            }
+            
+            presionarEnter();
+            mostrarRacha(estudiante);
+            break;
+            
+        case 0:
+            break;
+            
+        default:
+            System.out.println("Opción inválida.");
+            mostrarRacha(estudiante);
     }
+}
 
     // ========================== FUNCIONALIDADES CATEDRÁTICO ==========================
 
