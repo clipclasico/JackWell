@@ -222,29 +222,26 @@ public class MascotaVirtual
     public String obtenerEstadoCompleto()
     {
         StringBuilder sb = new StringBuilder();
-        sb.append("║    🐾 ESTADO DE " + nombre.toUpperCase() + " 🐾\n");
-        sb.append("║  Tipo: " + tipo + "\n");
-        sb.append("║  Nivel: " + nivel + "/" + NIVEL_MAXIMO + "\n");
-        sb.append("║  Experiencia: " + experiencia + "/" + EXP_POR_NIVEL + " EXP\n");
-        sb.append("║  \n");
-        sb.append("║  " + obtenerBarraProgreso("Felicidad", felicidad, FELICIDAD_MAXIMA) + "\n");
-        sb.append("║  " + obtenerBarraProgreso("Energía", energia, ENERGIA_MAXIMA) + "\n");
-        sb.append("║  \n");
+        sb.append("ESTADO DE " + nombre.toUpperCase() + " 🐾\n");
+        sb.append("Tipo: " + tipo + "\n");
+        sb.append("Nivel: " + nivel + "/" + NIVEL_MAXIMO + "\n");
+        sb.append("Experiencia: " + experiencia + "/" + EXP_POR_NIVEL + " EXP\n");
+        sb.append(obtenerBarraProgreso("Felicidad", felicidad, FELICIDAD_MAXIMA) + "\n");
+        sb.append(obtenerBarraProgreso("Energía", energia, ENERGIA_MAXIMA) + "\n");
         
         if (!accesorios.isEmpty())
         {
-            sb.append("║  Accesorios:\n");
+            sb.append("Accesorios:\n");
             for (String acc : accesorios)
             {
-                sb.append("║    • " + acc + "\n");
+                sb.append(acc + "\n");
             }
         }
         else
         {
-            sb.append("║  No tiene accesorios aún\n");
+            sb.append("No tiene accesorios aún\n");
         }
         
-        sb.append("╚════════════════════════════════════════╝");
         return sb.toString();
     }
 

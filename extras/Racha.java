@@ -5,8 +5,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-import extras.Racha.Recompensa;
-
 public class Racha
 {
     private int diasConsecutivos;
