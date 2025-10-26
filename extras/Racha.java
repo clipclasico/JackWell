@@ -5,6 +5,8 @@ import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
+import extras.Racha.Recompensa;
+
 public class Racha
 {
     private int diasConsecutivos;
@@ -41,7 +43,7 @@ public class Racha
         @Override
         public String toString()
         {
-            String estado = desbloqueada ? : "🔒";
+            String estado = desbloqueada ? "✅" : "🔒";
             return estado + " " + icono + " " + nombre + " - " + descripcion + " (" + diasRequeridos + " días)";
         }
     }
@@ -70,54 +72,63 @@ public class Racha
             "Construyendo Hábitos", 
             "3 días consecutivos de registro", 
             3, 
+            "🔥"
         ));
 
         recompensasDisponibles.add(new Recompensa(
             "Una Semana Fuerte", 
             "7 días consecutivos", 
-            7, 
+            7,
+            "⭐" 
         ));
 
         recompensasDisponibles.add(new Recompensa(
             "Dedicación Total", 
             "14 días consecutivos", 
             14, 
+            "💎"
         ));
 
         recompensasDisponibles.add(new Recompensa(
             "Mes de Campeón", 
             "30 días consecutivos", 
             30,
+            "👑"
         ));
 
         recompensasDisponibles.add(new Recompensa(
             "Maestro del Bienestar", 
             "50 días consecutivos", 
             50, 
+            "🏆"
         ));
 
         recompensasDisponibles.add(new Recompensa(
             "Leyenda Viviente", 
             "100 días consecutivos", 
             100, 
+            "🌟"
         ));
 
         recompensasDisponibles.add(new Recompensa(
             "Escritor Novato", 
             "10 entradas totales", 
             10, 
+            "📝"
         ));
 
         recompensasDisponibles.add(new Recompensa(
             "Cronista", 
             "50 entradas totales", 
             50, 
+            "📖"
         ));
 
         recompensasDisponibles.add(new Recompensa(
             "Autobiógrafo", 
             "100 entradas totales", 
             100, 
+            "📚"
         ));
     }
 

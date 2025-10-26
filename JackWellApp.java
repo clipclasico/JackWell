@@ -389,7 +389,7 @@ public class JackWellApp
                     System.out.println("Se ha sugerido un ejercicio de relajación para ti: " + ejercicio.obtenerDescripcion());
                 }
 
-                System.out.println(estudiante.getRacha().obtenerProgresoProximaRecompensa())
+                System.out.println(estudiante.getRacha().obtenerProgresoProximaRecompensa());
                 presionarEnter();
                 gestionarDiarioEmocional(estudiante);
                 break;
@@ -959,7 +959,6 @@ public class JackWellApp
     racha.mostrarEstadisticas();
     
     System.out.println("\n" + racha.obtenerProgresoProximaRecompensa());
-    System.out.println(racha.obtenerEmojiRacha() + " ¡Sigue así!");
     
     System.out.println("\n1. Ver todas las recompensas");
     System.out.println("2. Ver recompensas obtenidas");

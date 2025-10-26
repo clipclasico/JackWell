@@ -161,7 +161,7 @@ public class MascotaVirtual
         nivel++;
         experiencia -= EXP_POR_NIVEL;
         
-        System.out.println("nombre + " ahora es nivel " + nivel + "!);
+        System.out.println(nombre + " ahora es nivel " + nivel + "!");
 
         evolucionarMascota();
 
