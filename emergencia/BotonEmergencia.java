@@ -24,6 +24,6 @@ public class BotonEmergencia implements Serializable {
     }
 
     public String obtenerEstado() {
-        return activado ? "🆘 Botón activado" : "🔒 Botón desactivado";
+        return activado ? "Botón activado" : "Botón desactivado";
     }
 }
