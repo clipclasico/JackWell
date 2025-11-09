@@ -148,7 +148,7 @@ public class MascotaVirtual
         }
 
         experiencia += cantidad;
-        System.out.println("📈 +" + cantidad + " EXP");
+        System.out.println(cantidad + " EXP");
 
         if (experiencia >= EXP_POR_NIVEL)
         {
@@ -270,23 +270,23 @@ public class MascotaVirtual
     {
         if (felicidad >= 80 && energia >= 70)
         {
-            return "😄";
+            return ":D";
         }
         else if (felicidad >= 60 && energia >= 50)
         {
-            return "😊";
+            return ":)";
         }
         else if (felicidad >= 40 || energia >= 30)
         {
-            return "😐";
+            return ":(";
         }
         else if (energia < 20)
         {
-            return "😴";
+            return "xl";
         }
         else
         {
-            return "😢";
+            return "D:";
         }
     }
 

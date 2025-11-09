@@ -901,7 +901,7 @@ public class JackWellApp
             break;
             
         case 6:
-            System.out.println("\n🎁 ACCESORIOS DISPONIBLES:");
+            System.out.println("\nACCESORIOS DISPONIBLES:");
             System.out.println("1. Collar Dorado");
             System.out.println("2. Gorra Cool");
             System.out.println("3. Bufanda de Invierno");

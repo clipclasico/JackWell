@@ -20,7 +20,7 @@ public class BotonEmergencia {
     }
 
     public String obtenerEstado() {
-        return activado ? "🆘 Botón activado" : "🔒 Botón desactivado";
+        return activado ? "Botón activado" : "Botón desactivado";
     }
 
 }

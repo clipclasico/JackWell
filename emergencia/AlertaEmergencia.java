@@ -10,7 +10,7 @@ public class AlertaEmergencia {
     }
 
     public String generarAlerta() {
-        return "🔔 Alerta enviada a " + tipoCuentaDestino + ": " + mensaje;
+        return "Alerta enviada a " + tipoCuentaDestino + ": " + mensaje;
     }
 
     public String getTipoCuentaDestino() {
