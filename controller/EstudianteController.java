@@ -502,7 +502,7 @@ public class EstudianteController
             {
                 view.mostrarMensaje("Aún no has obtenido recompensas.");
             } else {
-                for (var r : racha.getRecompensasObtenidas())
+                for (var r: racha.getRecompensasObtenidas())
                 {
                     view.mostrarMensaje("  " + r.getIcono() + " " + r.getNombre());
                 }
