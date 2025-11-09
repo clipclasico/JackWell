@@ -23,21 +23,11 @@ public class MainController
     public void iniciar()
     {
         mainView.mostrarBienvenida();
-        
-        boolean salir = false;
-        while (!salir) {
-            if (!usuarioModel.haySesionActiva())
-            {
-                salir = mostrarMenuPrincipal();
-            } else {
-                salir = mostrarMenuUsuario();
-            }
-        }
-        
+        ejecutarMenuPrincipal();
         mainView.mostrarDespedida();
     }
 
-    private boolean mostrarMenuPrincipal()
+    private void ejecutarMenuPrincipal()
     {
         int opcion = mainView.mostrarMenuPrincipal();
         
@@ -45,30 +35,44 @@ public class MainController
         {
             case 1:
                 loginController.iniciarSesion();
+                ejecutarProximoMenu();
                 break;
             case 2:
                 loginController.registrarUsuario();
+                ejecutarProximoMenu();
                 break;
             case 3:
                 mainView.mostrarFraseDelDia();
+                ejecutarProximoMenu();
                 break;
             case 4:
                 mainView.mostrarFormularioDenuncias();
+                ejecutarProximoMenu();
                 break;
             case 5:
                 usuarioModel.listarUsuarios();
                 mainView.esperarEnter();
+                ejecutarProximoMenu();
                 break;
             case 0:
-                return true;
+                return;
             default:
                 mainView.mostrarError("Opción inválida");
+                ejecutarProximoMenu();
         }
-        
-        return false;
     }
 
-    private boolean mostrarMenuUsuario()
+    private void ejecutarProximoMenu()
+    {
+        if (usuarioModel.haySesionActiva())
+        {
+            ejecutarMenuUsuario();
+        } else {
+            ejecutarMenuPrincipal();
+        }
+    }
+
+    private void ejecutarMenuUsuario()
     {
         Usuario usuario = usuarioModel.getUsuarioActual();
         
@@ -77,39 +81,45 @@ public class MainController
             if (estudianteController == null)
             {
                 estudianteController = new EstudianteController(
-                (Estudiante) usuario, 
-                new EstudianteView(),
-                usuarioModel
+                    (Estudiante) usuario, 
+                    new EstudianteView(),
+                    usuarioModel
                 );
             }
-            return estudianteController.manejarMenu();
+            estudianteController.manejarMenu();
             
         } else if (usuario instanceof Catedratico)
         {
             if (catedraticoController == null)
             {
                 catedraticoController = new CatedraticoController(
-                (Catedratico) usuario,
-                new CatedraticoView(),
-                usuarioModel
+                    (Catedratico) usuario,
+                    new CatedraticoView(),
+                    usuarioModel
                 );
             }
-            return catedraticoController.manejarMenu();
+            catedraticoController.manejarMenu();
             
         } else if (usuario instanceof Padre)
         {
             if (padreController == null)
             {
                 padreController = new PadreController(
-                (Padre) usuario,
-                new PadreView(),
-                usuarioModel
+                    (Padre) usuario,
+                    new PadreView(),
+                    usuarioModel
                 );
             }
-            return padreController.manejarMenu();
+            padreController.manejarMenu();
         }
-        
-        return false;
+
+        if (usuarioModel.haySesionActiva())
+        {
+            ejecutarMenuUsuario();
+        } else {
+            reiniciarControladores();
+            ejecutarMenuPrincipal();
+        }
     }
 
     public void reiniciarControladores()
