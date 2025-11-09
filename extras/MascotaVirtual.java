@@ -1,11 +1,14 @@
 package extras;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MascotaVirtual
+public class MascotaVirtual implements Serializable
 {
+    private static final long serialVersionUID = 1L;
+    
     private String nombre;
     private int nivel;
     private int experiencia;
@@ -13,7 +16,7 @@ public class MascotaVirtual
     private int energia;
     private String tipo;
     private List<String> accesorios;
-    private Random random;
+    private transient Random random;
 
     private static final int EXP_POR_NIVEL = 100;
     private static final int NIVEL_MAXIMO = 10;
@@ -29,6 +32,12 @@ public class MascotaVirtual
         this.energia = 100;
         this.tipo = "Cachorro";
         this.accesorios = new ArrayList<>();
+        this.random = new Random();
+    }
+    
+    private void readObject(java.io.ObjectInputStream in)
+        throws java.io.IOException, ClassNotFoundException {
+        in.defaultReadObject();
         this.random = new Random();
     }
 

@@ -1,12 +1,24 @@
 package RegistrarEntradas;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class AplicacionDiario {
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-        DiarioEmocional miDiario = new DiarioEmocional();
+        Scanner scanner = new Scanner(System.in);
+        DiarioEmocional miDiario = null;
         boolean salir = false;
+
+        try {
+            miDiario = (DiarioEmocional) GestorPersistencia.cargarDatos();
+            System.out.println("Datos del diario cargados exitosamente.");
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("No se pudo cargar el archivo. Se creará un diario nuevo.");
+        }
+        
+        if (miDiario == null) {
+            miDiario = new DiarioEmocional();
+        }
 
         System.out.println("Bienvenido a tu diario de emociones portatil ");
 
@@ -15,10 +27,10 @@ public class AplicacionDiario {
             System.out.println("1. Registrar nueva entrada");
             System.out.println("2. Ver todas mis entradas");
             System.out.println("3. Eliminar una entrada");
-            System.out.println("4. Salir");
+            System.out.println("4. Salir y Guardar");
             System.out.print("Elige una opción: ");
 
-        int opcion = scanner.nextInt();
+            int opcion = scanner.nextInt();
             scanner.nextLine();
             switch (opcion) {
                 case 1:
@@ -28,7 +40,6 @@ public class AplicacionDiario {
                     String pensamientos = scanner.nextLine();
                     miDiario.agregarEntrada(animo, pensamientos);
                     break;
-
                 
                 case 2:
                     miDiario.verEntradas();
@@ -43,18 +54,21 @@ public class AplicacionDiario {
                     break;
                 
                 case 4:
-                    System.out.println("Gracias por usar tu diario, no platicamos luego");
+                    try {
+                        GestorPersistencia.guardarDatos(miDiario);
+                        System.out.println("¡Diario guardado! Gracias por usar tu diario, no platicamos luego.");
+                    } catch (IOException e) {
+                        System.err.println("¡ERROR! No se pudieron guardar los datos.");
+                        e.printStackTrace();
+                    }
                     salir = true; 
                     break;
                 
                 default:
                     System.out.println("Opción no válida. Por favor, intenta de nuevo.");
                     break;
-                
             }
         }
         scanner.close();
     }
 }
-
-                    

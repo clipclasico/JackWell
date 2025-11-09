@@ -1,12 +1,15 @@
 package extras;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Racha
+public class Racha implements Serializable
 {
+    private static final long serialVersionUID = 1L;
+    
     private int diasConsecutivos;
     private int mejorRacha;
     private LocalDate ultimaFecha;
@@ -14,8 +17,10 @@ public class Racha
     private List<Recompensa> recompensasObtenidas;
     private List<Recompensa> recompensasDisponibles;
 
-    public static class Recompensa
+    public static class Recompensa implements Serializable
     {
+        private static final long serialVersionUID = 1L;
+        
         private String nombre;
         private String descripcion;
         private int diasRequeridos;
@@ -234,35 +239,35 @@ public class Racha
         
         if (diasConsecutivos == 0)
         {
-            System.out.println("   ¡Empieza hoy tu viaje hacia el bienestar!");
+            System.out.println("   ¡Empieza hoy tu viaje hacia el bienestar!");
         }
         else if (diasConsecutivos < 3)
         {
-            System.out.println("   ¡Buen comienzo! Sigue así.");
+            System.out.println("   ¡Buen comienzo! Sigue así.");
         }
         else if (diasConsecutivos < 7)
         {
-            System.out.println("   ¡Excelente! Estás construyendo un hábito sólido.");
+            System.out.println("   ¡Excelente! Estás construyendo un hábito sólido.");
         }
         else if (diasConsecutivos < 14)
         {
-            System.out.println("   ¡Increíble! Una semana completa de constancia.");
+            System.out.println("   ¡Increíble! Una semana completa de constancia.");
         }
         else if (diasConsecutivos < 30)
         {
-            System.out.println("   ¡Impresionante! Eres un ejemplo de dedicación.");
+            System.out.println("   ¡Impresionante! Eres un ejemplo de dedicación.");
         }
         else if (diasConsecutivos < 50)
         {
-            System.out.println("   ¡UN MES! Eres un verdadero campeón del bienestar.");
+            System.out.println("   ¡UN MES! Eres un verdadero campeón del bienestar.");
         }
         else if (diasConsecutivos < 100)
         {
-            System.out.println("   ¡ASOMBROSO! Eres un maestro del autocuidado.");
+            System.out.println("   ¡ASOMBROSO! Eres un maestro del autocuidado.");
         }
         else
         {
-            System.out.println("   ¡LEGENDARIO! Eres una inspiración para todos.");
+            System.out.println("   ¡LEGENDARIO! Eres una inspiración para todos.");
         }
     }
 
@@ -270,10 +275,10 @@ public class Racha
     {
         System.out.println("RECOMPENSAS\n");
         
-        System.out.println("║  Recompensas Obtenidas:");
+        System.out.println("║  Recompensas Obtenidas:");
         if (recompensasObtenidas.isEmpty())
         {
-            System.out.println("║    Aún no has desbloqueado ninguna");
+            System.out.println("║    Aún no has desbloqueado ninguna");
         }
         else
         {
@@ -297,7 +302,7 @@ public class Racha
         
         if (!hayProximas)
         {
-            System.out.println("║    ¡Has desbloqueado todas!");
+            System.out.println("║s   ¡Has desbloqueado todas!");
         }
     }
 
