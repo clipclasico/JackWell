@@ -12,7 +12,7 @@ public class EntradaDiario implements Serializable
     private String estadoAnimo;
     private String pensamientos;
 
-    public EntradaDiario(String estadoAnimo, String pensamientos) {
+    public EntradaDiario(int id, String estadoAnimo, String pensamientos) {
         this.id = id;
         this.fecha = LocalDateTime.now();
         this.estadoAnimo = estadoAnimo;

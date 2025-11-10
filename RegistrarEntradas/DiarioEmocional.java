@@ -6,9 +6,7 @@ import java.util.List;
 
 public class DiarioEmocional implements Serializable
 {
-    
     private static final long serialVersionUID = 1L;
-
     private List<EntradaDiario> entradas;
     private int proximoId = 1;
 
