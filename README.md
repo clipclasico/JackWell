@@ -1,12 +1,20 @@
-# JackWell
+# JackWell 🌱🐉
 
-Este proyecto de **Wellness** busca adaptarse al estudiante durante su camino por la universidad.
+Aplicación de **Wellness** diseñada para estudiantes universitarios.
 
-## Integrantes
+## 🎯 Características principales
+
+- 📔 **Diario emocional** con sistema de rachas
+- 🐾 **Mascota virtual** con sistema de niveles
+- 📅 **Gestión de horarios** con detección de conflictos
+- 🧘 **Ejercicios de relajación**
+- 🚨 **Sistema de emergencias** con contactos
+- 💬 **Frases motivacionales** cargadas desde CSV
+
+## 👥 Integrantes
 - Giovanni Orozco
-- Nathalie Valle
+- Nathalie Valle  
 - Luis Pedro López
 
-## Extra:
-
-Los commits de cada integrante del equipo se realizaron en sus respectivas branches con el objetivo de mantener el **main** lo más limpio posible.
+## 📁 Estructura
+Arquitectura **MVC**

@@ -13,7 +13,7 @@ public class MascotaVirtual
     private int energia;
     private String tipo;
     private List<String> accesorios;
-    private transient Random random;
+    private Random random;
 
     private static final int EXP_POR_NIVEL = 100;
     private static final int NIVEL_MAXIMO = 10;
