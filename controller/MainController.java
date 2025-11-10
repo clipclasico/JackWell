@@ -24,10 +24,6 @@ public class MainController
     {
         mainView.mostrarBienvenida();
         ejecutarMenuPrincipal();
-        
-        System.out.println("\n Guardando datos...");
-        usuarioModel.guardarUsuarios();
-        
         mainView.mostrarDespedida();
     }
 
@@ -92,8 +88,6 @@ public class MainController
             }
             estudianteController.manejarMenu();
             
-            usuarioModel.guardarUsuarios();
-            
         } else if (usuario instanceof Catedratico)
         {
             if (catedraticoController == null)
@@ -106,8 +100,6 @@ public class MainController
             }
             catedraticoController.manejarMenu();
             
-            usuarioModel.guardarUsuarios();
-            
         } else if (usuario instanceof Padre)
         {
             if (padreController == null)
@@ -119,8 +111,6 @@ public class MainController
                 );
             }
             padreController.manejarMenu();
-            
-            usuarioModel.guardarUsuarios();
         }
 
         if (usuarioModel.haySesionActiva())

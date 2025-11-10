@@ -1,46 +1,40 @@
 package RegistrarEntradas;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 public class DiarioEmocional implements Serializable
 {
     private static final long serialVersionUID = 1L;
+=======
+public class DiarioEmocional {
+>>>>>>> parent of 612331d (Persistencia)
     private List<EntradaDiario> entradas;
-    private int proximoId = 1;
 
-    public DiarioEmocional()
-    {
+    public DiarioEmocional() {
         this.entradas = new ArrayList<>();
-        this.proximoId = 1;
     }
 
-    public void agregarEntrada(String estadoAnimo, String pensamientos)
-    {
-        EntradaDiario nuevaEntrada = new EntradaDiario(this.proximoId, estadoAnimo, pensamientos);
+    public void agregarEntrada(String estadoAnimo, String pensamientos) {
+        EntradaDiario nuevaEntrada = new EntradaDiario(estadoAnimo, pensamientos);
         this.entradas.add(nuevaEntrada);
-        this.proximoId++;
-        System.out.println("Entrada guardada.");
+        System.out.println("Se guardó tu entrada.");
     }
 
-    public void verEntradas()
-    {
+    public void verEntradas() {
         System.out.println("\n================ REGISTROS DEL DIARIO ================");
-        if (entradas.isEmpty())
-        {
+        if (entradas.isEmpty()) {
             System.out.println("El diario está vacío. ¡Anímate a escribir algo!");
         } else {
-            for (int i = this.entradas.size() - 1; i >= 0; i--)
-            {
+            for (int i = this.entradas.size() - 1; i >= 0; i--) {
                 System.out.println(this.entradas.get(i));
             }
         }
         System.out.println("======================================================");
     }
     
-    public boolean eliminarEntrada(int id)
-    {
+    public boolean eliminarEntrada(int id) {
         boolean eliminada = this.entradas.removeIf(entrada -> entrada.getId() == id);
         return eliminada;
     }

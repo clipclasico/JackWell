@@ -1,5 +1,2 @@
 # Ignorar todos los archivos .class
 *.class
-*.dat
-*.tmp
-*.bak

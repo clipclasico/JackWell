@@ -4,132 +4,93 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class FraseDia
 {
     private List<String> frases;
     private LocalDate fechaActual;
     private Random random;
-    private String rutaArchivoCSV;
 
     public FraseDia()
-    {
-        this("frases.csv");
-    }
-
-    public FraseDia(String rutaArchivoCSV)
     {
         this.frases = new ArrayList<>();
         this.random = new Random();
         this.fechaActual = LocalDate.now();
-        this.rutaArchivoCSV = rutaArchivoCSV;
-        
-        cargarFrasesDesdeCSV();
-        
-        if (this.frases.isEmpty())
-        {
-            cargarFrasesPorDefecto();
-        }
+        inicializarFrases();
     }
 
-    private void cargarFrasesDesdeCSV()
+    private void inicializarFrases()
     {
-        try (BufferedReader br = new BufferedReader(new FileReader(this.rutaArchivoCSV)))
-        {
-            String linea;
-            while ((linea = br.readLine()) != null)
-            {
-                if (!linea.trim().isEmpty()) {
-                    frases.add(linea.trim());
-                }
-            }
-            System.out.println(frases.size() + " frases cargadas desde " + this.rutaArchivoCSV);
-        } catch (FileNotFoundException e) {
-            System.out.println("Archivo " + this.rutaArchivoCSV + " no encontrado. Usando frases por defecto.");
-        } catch (IOException e) {
-            System.err.println("Error al leer el archivo " + this.rutaArchivoCSV + ": " + e.getMessage());
-        }
-    }
-
-    private void cargarFrasesPorDefecto()
-    {
-        frases.add("La persistencia vence lo que la diligencia no alcanza.");
-        frases.add("Cada día es una nueva oportunidad para mejorar.");
-        frases.add("El bienestar empieza con pequeños pasos diarios.");
-        frases.add("Tu salud mental es tan importante como tu salud física.");
-        frases.add("No hay atajos para lugares que vale la pena visitar.");
+        frases.add("Tu salud mental es una prioridad. Cuídate.");
+        frases.add("Cada día es una nueva oportunidad para ser feliz.");
+        frases.add("La resiliencia es la clave para superar los desafíos.");
+        frases.add("No estás solo. Busca apoyo cuando lo necesites.");
+        frases.add("La meditación puede ayudarte a encontrar paz interior.");
+        frases.add("Hablar sobre tus sentimientos es un acto de valentía.");
+        frases.add("No pain, no gain.");
         frases.add("El éxito es la suma de pequeños esfuerzos repetidos día tras día.");
-        frases.add("Cuida tus pensamientos, se convertirán en palabras.");
-        frases.add("La mejor inversión es la que haces en ti mismo.");
-        frases.add("El cambio comienza cuando decides dar el primer paso.");
-        frases.add("Cada pequeño progreso cuenta en el camino del bienestar.");
-        
-        System.out.println("✓ " + frases.size() + " frases por defecto cargadas");
+        frases.add("La perseverancia es la madre del éxito.");
+        frases.add("Está bien no estar bien.");
+        frases.add("El autocuidado no es egoísmo, es una necesidad.");
+        frases.add("JackWell te cuida.");
+        frases.add("La felicidad no es algo hecho. Viene de tus propias acciones.");
+        frases.add("Tus errores no te definen. Aprende de ellos y sigue adelante.");
+        frases.add("¿Alguien lee esto?");
+        frases.add("Sé amable con todos. Nunca sabes si te puedes encontrar con alguien que cambie tu vida.");
+        frases.add("Los días difíciles no duran para siempre.");
+        frases.add("Peace. Power. JackWell.");
+        frases.add("Más wellness, menos drama.");
+        frases.add("Más que cuidado. Conexión.");
+        frases.add("Cada día es un reinicio. Aprovecha la oportunidad para empezar de nuevo.");
+        frases.add("El amor también se mide en bienestar.");
+        frases.add("Tu historia no termina aquí. Cada día es una nueva página en blanco.");
+        frases.add("Pequeños pasos conducen a grandes cambios.");
+        frases.add("Eres más fuerte de lo que piensas.");
+        frases.add("Ríe. Llora. Respira. Repite.");
+        frases.add("Los días dificiles hacen que los buenos días sean aún mejores.");
+        frases.add("Buenos días.");
+        frases.add("Tus errores no te definen. Aprende de ellos y sigue adelante.");
+        frases.add("Cada pequeño paso cuenta en tu camino hacia el bienestar.");
     }
 
-    public void agregarYGuardarFrase(String nuevaFrase) {
-        if (nuevaFrase == null || nuevaFrase.trim().isEmpty()) {
-            System.out.println("No se puede agregar una frase vacía.");
-            return;
-        }
-
-        this.frases.add(nuevaFrase);
-
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(this.rutaArchivoCSV, true))) {
-            bw.write(nuevaFrase);
-            bw.newLine();
-            System.out.println("✓ Frase agregada: " + nuevaFrase);
-        } catch (IOException e) {
-            System.err.println("✗ Error al guardar la frase: " + e.getMessage());
-            this.frases.remove(this.frases.size() - 1);
-        }
-    }
-
-    public String obtenerFraseDelDia() {
-        if (frases.isEmpty()) {
-            return "No hay frases disponibles. ¡Agrega algunas!";
-        }
+    public String obtenerFraseDelDia()
+    {
         int dia = fechaActual.getDayOfYear();
         int indice = dia % frases.size();
         return frases.get(indice);
     }
 
-    public String obtenerFraseAleatoria() {
-        if (frases.isEmpty()) {
-            return "No hay frases disponibles.";
-        }
+    public String obtenerFraseAleatoria()
+    {
         int indice = random.nextInt(frases.size());
         return frases.get(indice);
     }
 
-    public void mostrarFraseDelDia() {
+    public void mostrarFraseDelDia()
+    {
         String frase = obtenerFraseDelDia();
-        System.out.println("\n╔════════════════════════════════════════╗");
-        System.out.println("║       💭 FRASE DEL DÍA 💭             ║");
-        System.out.println("╠════════════════════════════════════════╣");
-        System.out.println("║ " + frase);
-        System.out.println("╚════════════════════════════════════════╝\n");
+        System.out.println("Frase del día: ");
+        System.out.println(frase);
     }
 
-    public void listarFrases() {
-        System.out.println("\n=== Listado de frases ===");
-        for (int i = 0; i < frases.size(); i++) {
+    public void listarFrases()
+    {
+        System.out.println("Listado de frases:");
+        for (int i = 0; i < frases.size(); i++)
+        {
             System.out.println((i + 1) + ". " + frases.get(i));
         }
-        System.out.println("Total: " + frases.size() + " frases\n");
+        System.out.println("Total de frases: " + frases.size());
+
     }
 
-    public List<String> getFrases() {
+    public List<String> getFrases()
+    {
         return new ArrayList<>(frases);
     }
 
-    public int getCantidadFrases() {
+    public int getCantidadFrases()
+    {
         return frases.size();
-    }
+    }    
 }
