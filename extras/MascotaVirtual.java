@@ -346,11 +346,4 @@ public class MascotaVirtual
             }
         }
     }
-
-    private void readObject(java.io.ObjectInputStream in)
-        throws java.io.IOException, ClassNotFoundException
-        {
-        in.defaultReadObject();
-        this.random = new Random();
-    }
 }

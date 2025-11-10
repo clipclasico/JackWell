@@ -1,2 +1,18 @@
-# Ignorar todos los archivos .class
+# Archivos compilados
 *.class
+
+# Archivos del IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# Directorios de build
+out/
+target/
+bin/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

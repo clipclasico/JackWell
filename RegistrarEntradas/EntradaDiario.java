@@ -5,14 +5,14 @@ import java.time.format.DateTimeFormatter;
 
 public class EntradaDiario
 {
-    private static final long serialVersionUID = 1L;
+    private static int contadorId = 1;
     private int id;
     private LocalDateTime fecha;
     private String estadoAnimo;
     private String pensamientos;
 
-    public EntradaDiario(int id, String estadoAnimo, String pensamientos) {
-        this.id = id;
+    public EntradaDiario(String estadoAnimo, String pensamientos) {
+        this.id = contadorId++;
         this.fecha = LocalDateTime.now();
         this.estadoAnimo = estadoAnimo;
         this.pensamientos = pensamientos;
