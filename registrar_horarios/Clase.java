@@ -1,10 +1,12 @@
 package registrar_horarios;
 
+import java.io.Serializable;
 import java.time.LocalTime;
 import java.time.DayOfWeek;
 
-public class Clase
+public class Clase implements Serializable
 {
+    private static final long serialVersionUID = 1L;
     private String nombreMateria;
     private DayOfWeek dia;
     private LocalTime horaInicio;

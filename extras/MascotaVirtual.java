@@ -1,11 +1,13 @@
 package extras;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MascotaVirtual
+public class MascotaVirtual implements Serializable
 {
+    private static final long serialVersionUID = 1L;
     private String nombre;
     private int nivel;
     private int experiencia;
@@ -345,5 +347,12 @@ public class MascotaVirtual
                 energia = ENERGIA_MAXIMA;
             }
         }
+    }
+
+    private void readObject(java.io.ObjectInputStream in)
+        throws java.io.IOException, ClassNotFoundException
+        {
+        in.defaultReadObject();
+        this.random = new Random();
     }
 }
