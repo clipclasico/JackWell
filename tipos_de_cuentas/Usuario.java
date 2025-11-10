@@ -1,10 +1,7 @@
 package tipos_de_cuentas;
 
-import java.io.Serializable;
-
-public abstract class Usuario implements Serializable
+public abstract class Usuario
 {
-    private static final long serialVersionUID = 1L;
     protected String id;
     protected String nombre;
     protected String correo;

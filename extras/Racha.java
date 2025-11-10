@@ -1,14 +1,12 @@
 package extras;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Racha implements Serializable
+public class Racha
 {
-    private static final long serialVersionUID = 1L;
     private int diasConsecutivos;
     private int mejorRacha;
     private LocalDate ultimaFecha;
@@ -16,9 +14,8 @@ public class Racha implements Serializable
     private List<Recompensa> recompensasObtenidas;
     private List<Recompensa> recompensasDisponibles;
 
-    public static class Recompensa implements Serializable
+    public static class Recompensa
     {
-        private static final long serialVersionUID = 1L;
         private String nombre;
         private String descripcion;
         private int diasRequeridos;

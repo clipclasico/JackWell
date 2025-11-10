@@ -1,13 +1,11 @@
 package registrar_horarios;
 
-import java.io.Serializable;
 import java.time.DayOfWeek;
 import java.util.*;
 import java.time.LocalTime;
 
-public class Horario implements Serializable
+public class Horario
 {
-    private static final long serialVersionUID = 1L;
     private ArrayList<Clase> clases;
 
     public Horario()

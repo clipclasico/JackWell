@@ -1,10 +1,9 @@
 package RegistrarEntradas;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class EntradaDiario implements Serializable
+public class EntradaDiario
 {
     private static final long serialVersionUID = 1L;
     private int id;

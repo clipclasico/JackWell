@@ -3,13 +3,8 @@ package RegistrarEntradas;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
-public class DiarioEmocional implements Serializable
+public class DiarioEmocional
 {
-    private static final long serialVersionUID = 1L;
-=======
-public class DiarioEmocional {
->>>>>>> parent of 612331d (Persistencia)
     private List<EntradaDiario> entradas;
 
     public DiarioEmocional() {

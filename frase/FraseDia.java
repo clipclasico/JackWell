@@ -1,5 +1,8 @@
 package frase;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,16 +13,48 @@ public class FraseDia
     private List<String> frases;
     private LocalDate fechaActual;
     private Random random;
+    private static final String ARCHIVO_FRASES = "frases.csv";
 
     public FraseDia()
     {
         this.frases = new ArrayList<>();
         this.random = new Random();
         this.fechaActual = LocalDate.now();
-        inicializarFrases();
+        cargarFrasesDesdeCSV();
+        
+        // Si no se pudieron cargar del CSV, usar frases por defecto
+        if (frases.isEmpty())
+        {
+            inicializarFrasesDefecto();
+        }
     }
 
-    private void inicializarFrases()
+    private void cargarFrasesDesdeCSV()
+    {
+        try (BufferedReader br = new BufferedReader(new FileReader(ARCHIVO_FRASES)))
+        {
+            String linea;
+            // Saltar la primera línea si es un encabezado
+            br.readLine();
+            
+            while ((linea = br.readLine()) != null)
+            {
+                linea = linea.trim();
+                if (!linea.isEmpty())
+                {
+                    frases.add(linea);
+                }
+            }
+            
+            System.out.println("✓ " + frases.size() + " frases cargadas desde " + ARCHIVO_FRASES);
+        }
+        catch (IOException e)
+        {
+            System.out.println("⚠ No se pudo cargar el archivo de frases. Usando frases por defecto.");
+        }
+    }
+
+    private void inicializarFrasesDefecto()
     {
         frases.add("Tu salud mental es una prioridad. Cuídate.");
         frases.add("Cada día es una nueva oportunidad para ser feliz.");
@@ -49,7 +84,6 @@ public class FraseDia
         frases.add("Ríe. Llora. Respira. Repite.");
         frases.add("Los días dificiles hacen que los buenos días sean aún mejores.");
         frases.add("Buenos días.");
-        frases.add("Tus errores no te definen. Aprende de ellos y sigue adelante.");
         frases.add("Cada pequeño paso cuenta en tu camino hacia el bienestar.");
     }
 
@@ -70,7 +104,7 @@ public class FraseDia
     {
         String frase = obtenerFraseDelDia();
         System.out.println("Frase del día: ");
-        System.out.println(frase);
+        System.out.println("   \"" + frase + "\"");
     }
 
     public void listarFrases()
@@ -81,7 +115,6 @@ public class FraseDia
             System.out.println((i + 1) + ". " + frases.get(i));
         }
         System.out.println("Total de frases: " + frases.size());
-
     }
 
     public List<String> getFrases()

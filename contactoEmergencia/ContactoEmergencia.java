@@ -1,10 +1,7 @@
 package contactoEmergencia;
 
-import java.io.Serializable;
-
-public class ContactoEmergencia implements Serializable
+public class ContactoEmergencia
 {
-    private static final long serialVersionUID = 1L;
     private String nombre;
     private String telefono;
     private String relacion;

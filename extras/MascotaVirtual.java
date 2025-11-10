@@ -1,13 +1,11 @@
 package extras;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MascotaVirtual implements Serializable
+public class MascotaVirtual
 {
-    private static final long serialVersionUID = 1L;
     private String nombre;
     private int nivel;
     private int experiencia;
