@@ -1,11 +1,15 @@
 package model;
 
 import tipos_de_cuentas.*;
+import persistencia.GestorPersistenciaUnificado;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UsuarioModel
 {
+    private static final String ARCHIVO_USUARIOS = "usuarios";
+    
     private List<Usuario> usuarios;
     private Usuario usuarioActual;
 
@@ -13,6 +17,31 @@ public class UsuarioModel
     {
         this.usuarios = new ArrayList<>();
         this.usuarioActual = null;
+        cargarUsuariosGuardados();
+    }
+
+    @SuppressWarnings("unchecked")
+    private void cargarUsuariosGuardados()
+    {
+        try {
+            Object datos = GestorPersistenciaUnificado.cargarDatos(ARCHIVO_USUARIOS);
+            if (datos instanceof List<?>) {
+                this.usuarios = (List<Usuario>) datos;
+                System.out.println("✓ " + usuarios.size() + " usuarios cargados correctamente");
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("ℹ Iniciando con sistema nuevo (sin usuarios previos)");
+        }
+    }
+
+    public void guardarUsuarios()
+    {
+        try {
+            GestorPersistenciaUnificado.guardarDatos(ARCHIVO_USUARIOS, usuarios);
+            System.out.println("✓ Datos guardados correctamente");
+        } catch (IOException e) {
+            System.err.println("✗ Error al guardar usuarios: " + e.getMessage());
+        }
     }
 
     public boolean iniciarSesion(String correo, String contrasena)
@@ -30,6 +59,9 @@ public class UsuarioModel
 
     public void cerrarSesion()
     {
+        if (this.usuarioActual != null) {
+            guardarUsuarios();
+        }
         this.usuarioActual = null;
     }
 
@@ -62,9 +94,12 @@ public class UsuarioModel
                 }
             }
 
+            guardarUsuarios();
             return true;
+            
         } catch (Exception e)
         {
+            System.err.println("Error al registrar usuario: " + e.getMessage());
             return false;
         }
     }
@@ -128,6 +163,7 @@ public class UsuarioModel
         if (usuarioActual.autenticar(usuarioActual.getCorreo(), contrasenaActual))
         {
             usuarioActual.setContrasena(nuevaContrasena);
+            guardarUsuarios();
             return true;
         }
         return false;
