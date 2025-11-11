@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// Horario.java
+/// Clase para gestionar el horario de clases.
+/// ----------------------------------------------
+
 package registrar_horarios;
 
 import java.time.DayOfWeek;

@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// Usuario.java
+/// Clase abstracta que representa a un usuario en el sistema.
+/// ----------------------------------------------
+
 package tipos_de_cuentas;
 
 public abstract class Usuario

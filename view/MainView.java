@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// MainView.java
+/// Clase base para las vistas principales del sistema.
+/// ----------------------------------------------
+
 package view;
 
 import frase.FraseDia;

@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// CatedraticoController.java
+/// Controlador para gestionar las interacciones del catedrático.
+/// ----------------------------------------------
+
 package controller;
 
 import model.UsuarioModel;

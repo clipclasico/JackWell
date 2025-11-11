@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// Racha.java
+/// Clase para gestionar la racha de entradas diarias y recompensas.
+/// ----------------------------------------------
+
 package extras;
 
 import java.time.LocalDate;

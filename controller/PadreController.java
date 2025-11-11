@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// PadreController.java
+/// Controlador para gestionar las interacciones del padre.
+/// ----------------------------------------------
+
 package controller;
 
 import model.UsuarioModel;

@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// FormularioDenuncias.java
+/// Clase para gestionar el formulario de denuncias anónimas.
+/// ----------------------------------------------
+
 package formulario;
 
 public class FormularioDenuncias

@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// HorarioBuilder.java
+/// Clase para construir horarios de clases.
+/// ----------------------------------------------
+
 package registrar_horarios;
 
 import java.time.DayOfWeek;

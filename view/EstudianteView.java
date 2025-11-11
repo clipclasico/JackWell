@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// EstudianteView.java
+/// Vista para las interacciones del estudiante.
+/// ----------------------------------------------
+
 package view;
 
 import extras.MascotaVirtual;

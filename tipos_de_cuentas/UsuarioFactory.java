@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// UsuarioFactory.java
+/// Clase fábrica para crear instancias de Usuario según el tipo de cuenta.
+/// ----------------------------------------------
+
 package tipos_de_cuentas;
 
 public class UsuarioFactory

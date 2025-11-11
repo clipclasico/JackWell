@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// MainController.java
+/// Controlador principal que gestiona la navegación entre vistas y controladores específicos.
+/// ----------------------------------------------
+
 package controller;
 
 import model.*;

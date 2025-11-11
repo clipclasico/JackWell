@@ -1,3 +1,8 @@
+//// ----------------------------------------------
+/// ContactoEmergencia.java
+/// Clase para gestionar contactos de emergencia.
+/// ----------------------------------------------
+
 package contactoEmergencia;
 
 public class ContactoEmergencia

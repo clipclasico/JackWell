@@ -1,23 +1,33 @@
+/// ----------------------------------------------
+/// AlertaEmergencia.java
+/// Clase para gestionar alertas de emergencia.
+/// ----------------------------------------------
+
 package emergencia;
 
-public class AlertaEmergencia {
+public class AlertaEmergencia
+{
         private String tipoCuentaDestino;
     private String mensaje;
 
-    public AlertaEmergencia(String tipoCuentaDestino, String mensaje) {
+    public AlertaEmergencia(String tipoCuentaDestino, String mensaje)
+    {
         this.tipoCuentaDestino = tipoCuentaDestino;
         this.mensaje = mensaje;
     }
 
-    public String generarAlerta() {
+    public String generarAlerta()
+    {
         return "Alerta enviada a " + tipoCuentaDestino + ": " + mensaje;
     }
 
-    public String getTipoCuentaDestino() {
+    public String getTipoCuentaDestino()
+    {
         return tipoCuentaDestino;
     }
 
-    public String getMensaje() {
+    public String getMensaje()
+    {
         return mensaje;
     }
 

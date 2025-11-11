@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// UsuarioModel.java
+/// Modelo para gestionar usuarios y sesiones.
+/// ----------------------------------------------
+
 package model;
 
 import tipos_de_cuentas.*;

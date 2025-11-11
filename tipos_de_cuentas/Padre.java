@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// Padre.java
+/// Clase que representa a un padre de familia en el sistema.
+/// ----------------------------------------------
+
 package tipos_de_cuentas;
 
 public class Padre extends Usuario

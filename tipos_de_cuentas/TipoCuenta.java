@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// TipoCuenta.java
+/// Enum para definir los tipos de cuentas en el sistema.
+/// ----------------------------------------------
+
 package tipos_de_cuentas;
 
 public enum TipoCuenta

@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// GestorRelajacion.java
+/// Clase para gestionar ejercicios de relajación basados en horario y emociones.
+/// ----------------------------------------------
+
 package relajacion;
 
 import registrar_horarios.Horario;
@@ -7,13 +12,16 @@ import tipos_de_cuentas.Estudiante;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 
-public class GestorRelajacion {
+public class GestorRelajacion
+{
 
-    public static EjercicioRespiracion sugerirEjercicioPorHorario(Estudiante estudiante, DayOfWeek dia, LocalTime hora) {
+    public static EjercicioRespiracion sugerirEjercicioPorHorario(Estudiante estudiante, DayOfWeek dia, LocalTime hora)
+    {
         Horario horario = estudiante.getHorario();
         Clase claseActual = horario.obtenerClaseActual(dia, hora);
 
-        if (claseActual == null) {
+        if (claseActual == null)
+        {
             return new EjercicioRespiracion(
                 "Respiración profunda", 5, "Inhala por 4 segundos, exhala por 6 segundos. Repite lentamente."
             );
@@ -22,14 +30,17 @@ public class GestorRelajacion {
         }
     }
 
-    public static EjercicioRespiracion sugerirEjercicioPorEmocion(String emocion) {
+    public static EjercicioRespiracion sugerirEjercicioPorEmocion(String emocion)
+    {
         String emocionLower = emocion.toLowerCase();
 
-        if (emocionLower.contains("ansiedad") || emocionLower.contains("estrés")) {
+        if (emocionLower.contains("ansiedad") || emocionLower.contains("estrés"))
+        {
             return new EjercicioRespiracion(
                 "Respiración guiada", 7, "Inhala lentamente, cuenta hasta 4, mantén el aire, exhala contando hasta 6."
             );
-        } else if (emocionLower.contains("tristeza")) {
+        } else if (emocionLower.contains("tristeza"))
+        {
             return new EjercicioRespiracion(
                 "Respiración reconfortante", 6, "Respira profundo y visualiza un lugar que te haga sentir paz."
             );

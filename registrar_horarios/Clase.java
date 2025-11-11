@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// Clase.java
+/// Clase para gestionar la información de las clases registradas en el horario.
+/// ----------------------------------------------
+
 package registrar_horarios;
 
 import java.time.LocalTime;

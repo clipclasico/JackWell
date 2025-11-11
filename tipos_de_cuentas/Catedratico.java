@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// Catedratico.java
+/// Clase que representa a un catedrático en el sistema.
+/// ----------------------------------------------
+
 package tipos_de_cuentas;
 
 import java.util.ArrayList;

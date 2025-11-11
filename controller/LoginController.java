@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// LoginController.java
+/// Controlador para gestionar el inicio de sesión y registro de usuarios.
+/// ----------------------------------------------
+
 package controller;
 
 import model.UsuarioModel;

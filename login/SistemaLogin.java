@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// SistemaLogin.java
+/// Clase para gestionar el sistema de login de usuarios.
+/// ----------------------------------------------
+
 package login;
 
 import tipos_de_cuentas.*;

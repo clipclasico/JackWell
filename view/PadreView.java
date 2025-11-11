@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// PadreView.java
+/// Vista para las interacciones del padre de familia.
+/// ----------------------------------------------
+
 package view;
 
 import frase.FraseDia;

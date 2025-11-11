@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// FraseDia.java
+/// Clase para gestionar frases motivacionales diarias.
+/// ----------------------------------------------
+
 package frase;
 
 import java.io.BufferedReader;
@@ -22,7 +27,6 @@ public class FraseDia
         this.fechaActual = LocalDate.now();
         cargarFrasesDesdeCSV();
         
-        // Si no se pudieron cargar del CSV, usar frases por defecto
         if (frases.isEmpty())
         {
             inicializarFrasesDefecto();
@@ -34,7 +38,6 @@ public class FraseDia
         try (BufferedReader br = new BufferedReader(new FileReader(ARCHIVO_FRASES)))
         {
             String linea;
-            // Saltar la primera línea si es un encabezado
             br.readLine();
             
             while ((linea = br.readLine()) != null)
@@ -50,7 +53,7 @@ public class FraseDia
         }
         catch (IOException e)
         {
-            System.out.println("⚠ No se pudo cargar el archivo de frases. Usando frases por defecto.");
+            System.out.println("No se pudo cargar el archivo de frases. Usando frases por defecto.");
         }
     }
 

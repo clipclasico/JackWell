@@ -1,14 +1,22 @@
+/// ----------------------------------------------
+/// GestorEmergencia.java
+/// Clase para gestionar alertas de emergencia basadas en el estado emocional del estudiante.
+/// ----------------------------------------------
+
 package emergencia;
 
 import tipos_de_cuentas.Estudiante;
 
-public class GestorEmergencia {
+public class GestorEmergencia
+{
 
-    public static AlertaEmergencia generarAlertaPorEstado(Estudiante estudiante, String estadoEmocional) {
+    public static AlertaEmergencia generarAlertaPorEstado(Estudiante estudiante, String estadoEmocional)
+    {
         String tipoCuenta = "Contacto de emergencia";
         String mensaje;
 
-        switch (estadoEmocional.toLowerCase()) {
+        switch (estadoEmocional.toLowerCase())
+        {
             case "ansiedad":
             case "estrés":
                 mensaje = "El estudiante presenta signos de ansiedad. Se recomienda contacto inmediato.";

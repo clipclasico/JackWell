@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// EntradaDiario.java
+/// Clase para representar una entrada en el diario emocional.
+/// ----------------------------------------------
+
 package RegistrarEntradas;
 
 import java.time.LocalDateTime;
@@ -11,23 +16,27 @@ public class EntradaDiario
     private String estadoAnimo;
     private String pensamientos;
 
-    public EntradaDiario(String estadoAnimo, String pensamientos) {
+    public EntradaDiario(String estadoAnimo, String pensamientos)
+    {
         this.id = contadorId++;
         this.fecha = LocalDateTime.now();
         this.estadoAnimo = estadoAnimo;
         this.pensamientos = pensamientos;
     }
 
-    public int getId() {
+    public int getId()
+    {
         return this.id;
     }
 
-    public String getEstadoAnimo() {
+    public String getEstadoAnimo()
+    {
         return this.estadoAnimo;
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
         String cabecera = String.format("--- Entrada #%d | %s | Estado de Ánimo: %s ---",
                                         this.id, this.fecha.format(formato), this.estadoAnimo);

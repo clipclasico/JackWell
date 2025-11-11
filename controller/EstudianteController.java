@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// EstudianteController.java
+/// Controlador para gestionar las interacciones del estudiante.
+/// ----------------------------------------------
+
 package controller;
 
 import model.UsuarioModel;

@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// MascotaVirtual.java
+/// Clase para gestionar una mascota virtual interactiva.
+/// ----------------------------------------------
+
 package extras;
 
 import java.util.ArrayList;

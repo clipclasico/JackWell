@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// Estudiante.java
+/// Clase que representa a un estudiante en el sistema.
+/// ----------------------------------------------
+
 package tipos_de_cuentas;
 
 import java.util.ArrayList;

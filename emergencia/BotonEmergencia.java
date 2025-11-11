@@ -1,25 +1,36 @@
+/// ----------------------------------------------
+/// BotonEmergencia.java
+/// Clase para gestionar el botón de emergencia.
+/// ----------------------------------------------
+
 package emergencia;
 
-public class BotonEmergencia {
+public class BotonEmergencia
+{
         private boolean activado;
 
-    public BotonEmergencia() {
+    public BotonEmergencia()
+    {
         this.activado = false;
     }
 
-    public void activar() {
+    public void activar()
+    {
         this.activado = true;
     }
 
-    public void desactivar() {
+    public void desactivar()
+    {
         this.activado = false;
     }
 
-    public boolean estaActivado() {
+    public boolean estaActivado()
+    {
         return activado;
     }
 
-    public String obtenerEstado() {
+    public String obtenerEstado()
+    {
         return activado ? "Botón activado" : "Botón desactivado";
     }
 

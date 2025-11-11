@@ -1,3 +1,8 @@
+/// ----------------------------------------------
+/// CatedraticoView.java
+/// Vista para las interacciones del catedrático.
+/// ----------------------------------------------
+
 package view;
 
 import frase.FraseDia;
